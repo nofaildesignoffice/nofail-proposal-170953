@@ -1,0 +1,1123 @@
+<!-- PAGE: 타월 가이드 (Towel Guide) -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>타월 가이드 | 언커먼타올 - 뱀부 100% 프리미엄 페이스타월</title>
+  <meta name="description" content="페이스타월 선택부터 세탁·관리까지, 언커먼타올이 알려드리는 프리미엄 타월 가이드. GSM, 소재, 피부 타입별 맞춤 정보를 확인하세요.">
+  <meta name="keywords" content="프리미엄 수건, 뱀부 타월, 대나무 수건, 페이스타월, 항균 수건, 언커먼타올, uncommon towel, 혼수 수건, 선물 수건, 타월 가이드, GSM, 수건 세탁법">
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --text-black: #1A1A1A;
+      --text-dark: #333333;
+      --text-gray: #666666;
+      --text-light: #999999;
+      --text-muted: #BCBCBC;
+      --bg-white: #FFFFFF;
+      --bg-light: #F5F5F5;
+      --bg-dark: #2D2D2D;
+      --bg-black: #1A1A1A;
+      --border-light: #E0E0E0;
+      --border-default: #D0D0D0;
+      --placeholder-bg: #E0E0E0;
+      --placeholder-icon: #BCBCBC;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Pretendard', sans-serif;
+      color: var(--text-gray);
+      line-height: 1.6;
+      background: var(--bg-white);
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; font-family: inherit; background: none; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+      transition: all 0.3s;
+    }
+    .header.scrolled {
+      box-shadow: var(--shadow-sm);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .logo {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-black);
+      letter-spacing: 0.5px;
+    }
+    .gnb {
+      display: flex;
+      gap: 36px;
+    }
+    .gnb-item {
+      position: relative;
+    }
+    .gnb-link {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-dark);
+      padding: 8px 0;
+      display: block;
+    }
+    .gnb-link.active {
+      color: var(--text-black);
+      font-weight: 600;
+    }
+    .gnb-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 8px 0;
+      min-width: 180px;
+      display: none;
+      box-shadow: var(--shadow-md);
+    }
+    .gnb-item:hover .gnb-dropdown {
+      display: block;
+    }
+    .gnb-dropdown a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: var(--text-gray);
+    }
+    .gnb-dropdown a:hover {
+      background: var(--bg-light);
+      color: var(--text-black);
+    }
+    .header-utils {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .header-utils svg {
+      width: 22px;
+      height: 22px;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+    .mobile-toggle {
+      display: none;
+    }
+
+    /* Section Common */
+    .section {
+      padding: 100px 0;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .section-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    .section-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text-black);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-gray);
+      line-height: 1.7;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* Section 1: GSM 비교 */
+    .gsm-section {
+      background: var(--bg-white);
+    }
+    .gsm-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .gsm-card {
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .gsm-number {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 8px;
+    }
+    .gsm-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+    }
+    .gsm-list {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .gsm-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+    .gsm-list-item svg {
+      width: 18px;
+      height: 18px;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Material Comparison */
+    .material-compare {
+      margin-top: 80px;
+    }
+    .compare-table {
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .compare-row {
+      display: grid;
+      grid-template-columns: 200px 1fr 1fr 1fr;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .compare-row:last-child {
+      border-bottom: none;
+    }
+    .compare-header {
+      background: var(--bg-light);
+      font-weight: 600;
+    }
+    .compare-cell {
+      padding: 16px 20px;
+      font-size: 14px;
+      color: var(--text-gray);
+      border-right: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+    }
+    .compare-cell:last-child {
+      border-right: none;
+    }
+    .compare-header .compare-cell {
+      color: var(--text-black);
+      font-size: 15px;
+    }
+    .compare-cell.highlight {
+      background: var(--bg-light);
+      font-weight: 600;
+      color: var(--text-black);
+    }
+
+    /* Section 2: Washing Guide */
+    .washing-section {
+      background: var(--bg-light);
+    }
+    .washing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 48px;
+    }
+    .washing-card {
+      background: var(--bg-white);
+      border-radius: var(--radius-md);
+      padding: 40px;
+    }
+    .washing-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .washing-title svg {
+      width: 28px;
+      height: 28px;
+      color: var(--text-dark);
+    }
+    .washing-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .washing-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .washing-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .washing-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--text-dark);
+    }
+    .washing-content h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-black);
+      margin-bottom: 4px;
+    }
+    .washing-content p {
+      font-size: 14px;
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+
+    /* Section 3: Skin Type Guide */
+    .skintype-section {
+      background: var(--bg-white);
+    }
+    .skintype-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .skintype-card {
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      text-align: center;
+    }
+    .skintype-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .skintype-icon svg {
+      width: 32px;
+      height: 32px;
+      color: var(--text-dark);
+    }
+    .skintype-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 12px;
+    }
+    .skintype-desc {
+      font-size: 14px;
+      color: var(--text-gray);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .skintype-benefits {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .skintype-benefit {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-gray);
+    }
+    .skintype-benefit svg {
+      width: 16px;
+      height: 16px;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Section 4: Size Guide */
+    .size-section {
+      background: var(--bg-light);
+    }
+    .size-content {
+      max-width: 900px;
+      margin: 48px auto 0;
+    }
+    .size-image {
+      background: var(--placeholder-bg);
+      border-radius: var(--radius-md);
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .size-image svg {
+      width: 64px;
+      height: 64px;
+      color: var(--placeholder-icon);
+    }
+    .size-table {
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--bg-white);
+    }
+    .size-row {
+      display: grid;
+      grid-template-columns: 200px 1fr 1fr;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .size-row:last-child {
+      border-bottom: none;
+    }
+    .size-header {
+      background: var(--bg-dark);
+    }
+    .size-cell {
+      padding: 16px 24px;
+      font-size: 15px;
+      color: var(--text-gray);
+      border-right: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+    }
+    .size-cell:last-child {
+      border-right: none;
+    }
+    .size-header .size-cell {
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+    .size-cell.label {
+      background: var(--bg-light);
+      font-weight: 600;
+      color: var(--text-black);
+    }
+    .size-note {
+      margin-top: 24px;
+      padding: 20px;
+      background: var(--bg-white);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-light);
+    }
+    .size-note p {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 60px 0 32px;
+      background: var(--bg-white);
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .footer-brand-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .footer-brand-desc {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .footer-col-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 13px;
+      color: var(--text-light);
+      padding: 4px 0;
+    }
+    .footer-col a:hover {
+      color: var(--text-dark);
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .footer-links {
+      display: flex;
+      gap: 16px;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+    }
+    .footer-links a:hover {
+      color: var(--text-gray);
+    }
+
+    /* TOP Button */
+    .top-button {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      width: 48px;
+      height: 48px;
+      background: var(--bg-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      z-index: 90;
+    }
+    .top-button.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    .top-button svg {
+      width: 20px;
+      height: 20px;
+      color: #FFFFFF;
+    }
+    .top-button:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .gnb, .header-utils svg:not(:last-child) {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .section {
+        padding: 60px 0;
+      }
+      .section-title {
+        font-size: 28px;
+      }
+      .section-header {
+        margin-bottom: 40px;
+      }
+      .gsm-grid,
+      .skintype-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .compare-row {
+        grid-template-columns: 1fr;
+      }
+      .compare-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--border-light);
+      }
+      .compare-cell:last-child {
+        border-bottom: none;
+      }
+      .washing-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .size-row {
+        grid-template-columns: 1fr;
+      }
+      .size-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--border-light);
+      }
+      .size-cell:last-child {
+        border-bottom: none;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="page_01.html" class="logo">UNCOMMON TOWEL</a>
+        <nav class="gnb">
+          <div class="gnb-item">
+            <a href="page_02.html" class="gnb-link">브랜드</a>
+            <div class="gnb-dropdown">
+              <a href="page_02.html">브랜드 철학</a>
+              <a href="page_03.html">브랜드 스토리</a>
+              <a href="page_04.html">브랜드 여정</a>
+              <a href="page_05.html">소재 이야기</a>
+              <a href="page_06.html">지속가능성</a>
+            </div>
+          </div>
+          <div class="gnb-item">
+            <a href="page_07.html" class="gnb-link">제품</a>
+          </div>
+          <div class="gnb-item">
+            <a href="page_08.html" class="gnb-link active">타월 가이드</a>
+          </div>
+          <div class="gnb-item">
+            <a href="page_09.html" class="gnb-link">B2B문의</a>
+            <div class="gnb-dropdown">
+              <a href="page_09.html">대량구매</a>
+              <a href="page_10.html">파트너십</a>
+            </div>
+          </div>
+          <div class="gnb-item">
+            <a href="page_11.html" class="gnb-link">고객 후기</a>
+          </div>
+          <div class="gnb-item">
+            <a href="page_12.html" class="gnb-link">고객센터</a>
+            <div class="gnb-dropdown">
+              <a href="page_12.html">FAQ</a>
+              <a href="page_13.html">1:1 문의</a>
+              <a href="page_14.html">주문 조회</a>
+              <a href="page_15.html">매장 안내</a>
+            </div>
+          </div>
+        </nav>
+        <div class="header-utils">
+          <i data-lucide="search"></i>
+          <i data-lucide="user"></i>
+          <i data-lucide="shopping-cart"></i>
+          <i data-lucide="menu" class="mobile-toggle"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Section 1: GSM별 차이 & 소재별 특성 -->
+    <section class="section gsm-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">TOWEL GUIDE</p>
+          <h1 class="section-title">페이스타월 고르는 법</h1>
+          <p class="section-desc">GSM(무게)과 소재에 따라 촉감과 흡수력이 달라져요. 언커먼타올이 알려드리는 프리미엄 타월 선택 기준을 확인하세요.</p>
+        </div>
+
+        <div class="gsm-grid">
+          <div class="gsm-card">
+            <p class="gsm-number">150~200g</p>
+            <p class="gsm-label">라이트 GSM</p>
+            <div class="gsm-list">
+              <div class="gsm-list-item">
+                <i data-lucide="check"></i>
+                <span>얇고 가벼운 촉감</span>
+              </div>
+              <div class="gsm-list-item">
+                <i data-lucide="check"></i>
+                <span>빠른 건조 속도</span>
+              </div>
+              <div class="gsm-list-item">
+                <i data-lucide="check"></i>
+                <span>여름철 적합</span>
+              </div>
+              <div class="gsm-list-item">
+                <i data-lucide="check"></i>
+                <span>흡수력 보통</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gsm-card" style="border: 2px solid var(--text-black);">
+            <p class="gsm-number">200~250g</p>
+            <p class="gsm-label">미디엄 GSM ★ 추천</p>
+            <div class="gsm-list">
+              <div class="gsm-list-item">
+                <i data-lucide="check"></i>
+                <span>부드럽고 풍성한 촉감</span>
+              </div>
+              <div class="gsm-list-item">
+                <i data-lucide="check"></i>
+                <span>우수한 흡수력</span>
+              </div>
+              <div class="gsm-list-item">
+                <i data-lucide="check"></i>
+                <span>사계절 사용</span>
+              </div>
+              <div class="gsm-list-item">
+                <i data-lucide="check"></i>
+                <span>내구성 균형</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gsm-card">
+            <p class="gsm-number">250g+</p>
+            <p class="gsm-label">헤비 GSM</p>
+            <div class="gsm-list">
+              <div class="gsm-list-item">
+                <i data-lucide="check"></i>
+                <span>두툼하고 럭셔리한 촉감</span>
+              </div>
+              <div class="gsm-list-item">
+                <i data-lucide="check"></i>
+                <span>최고 수준 흡수력</span>
+              </div>
+              <div class="gsm-list-item">
+                <i data-lucide="check"></i>
+                <span>호텔·스파 스타일</span>
+              </div>
+              <div class="gsm-list-item">
+                <i data-lucide="check"></i>
+                <span>건조 시간 길어짐</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="material-compare">
+          <h2 class="section-title" style="text-align:center; margin-bottom:32px;">소재별 특성 비교</h2>
+          <div class="compare-table">
+            <div class="compare-row compare-header">
+              <div class="compare-cell">구분</div>
+              <div class="compare-cell">뱀부 (대나무)</div>
+              <div class="compare-cell">면 (코튼)</div>
+              <div class="compare-cell">극세사</div>
+            </div>
+            <div class="compare-row">
+              <div class="compare-cell highlight">흡수력</div>
+              <div class="compare-cell">★★★★★ 최고</div>
+              <div class="compare-cell">★★★★☆ 우수</div>
+              <div class="compare-cell">★★★☆☆ 보통</div>
+            </div>
+            <div class="compare-row">
+              <div class="compare-cell highlight">건조 속도</div>
+              <div class="compare-cell">면 대비 2배 빠름</div>
+              <div class="compare-cell">보통</div>
+              <div class="compare-cell">빠름</div>
+            </div>
+            <div class="compare-row">
+              <div class="compare-cell highlight">항균력</div>
+              <div class="compare-cell">섬유 95% 살균</div>
+              <div class="compare-cell">일반</div>
+              <div class="compare-cell">일반</div>
+            </div>
+            <div class="compare-row">
+              <div class="compare-cell highlight">촉감</div>
+              <div class="compare-cell">실크처럼 부드러움</div>
+              <div class="compare-cell">자연스러운 포근함</div>
+              <div class="compare-cell">미끄러운 질감</div>
+            </div>
+            <div class="compare-row">
+              <div class="compare-cell highlight">내구성</div>
+              <div class="compare-cell">우수 (세탁 견뢰도 최고등급)</div>
+              <div class="compare-cell">우수</div>
+              <div class="compare-cell">보통</div>
+            </div>
+            <div class="compare-row">
+              <div class="compare-cell highlight">환경</div>
+              <div class="compare-cell">생분해 가능, 지속가능</div>
+              <div class="compare-cell">자연 소재</div>
+              <div class="compare-cell">합성 섬유</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: 올바른 세탁·관리법 -->
+    <section class="section washing-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">CARE GUIDE</p>
+          <h2 class="section-title">올바른 세탁·관리법</h2>
+          <p class="section-desc">프리미엄 타월의 수명을 연장하고 부드러운 촉감을 유지하는 세탁 방법을 알려드려요.</p>
+        </div>
+
+        <div class="washing-grid">
+          <div class="washing-card">
+            <h3 class="washing-title">
+              <i data-lucide="droplet"></i>
+              세탁 시 주의사항
+            </h3>
+            <div class="washing-list">
+              <div class="washing-item">
+                <div class="washing-icon">
+                  <i data-lucide="thermometer"></i>
+                </div>
+                <div class="washing-content">
+                  <h4>미지근한 물 사용 (30~40도)</h4>
+                  <p>뜨거운 물은 섬유를 손상시키고 수축을 유발해요. 미지근한 물로 세탁하세요.</p>
+                </div>
+              </div>
+
+              <div class="washing-item">
+                <div class="washing-icon">
+                  <i data-lucide="ban"></i>
+                </div>
+                <div class="washing-content">
+                  <h4>유연제 사용 금지</h4>
+                  <p>유연제는 섬유 표면에 막을 형성해 흡수력을 떨어뜨려요. 사용하지 마세요.</p>
+                </div>
+              </div>
+
+              <div class="washing-item">
+                <div class="washing-icon">
+                  <i data-lucide="wind"></i>
+                </div>
+                <div class="washing-content">
+                  <h4>표백제 사용 지양</h4>
+                  <p>표백제는 색상을 탈색시키고 섬유를 약화시킬 수 있어요. 가급적 사용하지 마세요.</p>
+                </div>
+              </div>
+
+              <div class="washing-item">
+                <div class="washing-icon">
+                  <i data-lucide="rotate-cw"></i>
+                </div>
+                <div class="washing-content">
+                  <h4>세탁망 사용</h4>
+                  <p>세탁망에 넣어 세탁하면 올이 풀리거나 손상되는 것을 방지할 수 있어요.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="washing-card">
+            <h3 class="washing-title">
+              <i data-lucide="sun"></i>
+              건조·보관 팁
+            </h3>
+            <div class="washing-list">
+              <div class="washing-item">
+                <div class="washing-icon">
+                  <i data-lucide="maximize-2"></i>
+                </div>
+                <div class="washing-content">
+                  <h4>그늘에서 자연 건조</h4>
+                  <p>직사광선은 색상 변색을 유발해요. 통풍이 잘 되는 그늘에서 말리세요.</p>
+                </div>
+              </div>
+
+              <div class="washing-item">
+                <div class="washing-icon">
+                  <i data-lucide="move"></i>
+                </div>
+                <div class="washing-content">
+                  <h4>흔들어서 건조</h4>
+                  <p>세탁 후 가볍게 털어서 파일(섬유)을 세워주면 부드러움이 유지돼요.</p>
+                </div>
+              </div>
+
+              <div class="washing-item">
+                <div class="washing-icon">
+                  <i data-lucide="zap-off"></i>
+                </div>
+                <div class="washing-content">
+                  <h4>건조기는 저온 모드</h4>
+                  <p>건조기를 사용한다면 저온 모드로 설정하고 과도하게 건조하지 마세요.</p>
+                </div>
+              </div>
+
+              <div class="washing-item">
+                <div class="washing-icon">
+                  <i data-lucide="package"></i>
+                </div>
+                <div class="washing-content">
+                  <h4>통풍 잘 되는 곳에 보관</h4>
+                  <p>습기가 차지 않도록 통풍이 잘 되는 곳에 보관하면 냄새 발생을 막을 수 있어요.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 피부 타입별 적합 이유 -->
+    <section class="section skintype-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">FOR YOUR SKIN</p>
+          <h2 class="section-title">피부 타입별 적합 이유</h2>
+          <p class="section-desc">뱀부 소재는 모든 피부 타입에 안전하고 부드러워요. 당신의 피부 타입에 맞는 이유를 확인하세요.</p>
+        </div>
+
+        <div class="skintype-grid">
+          <div class="skintype-card">
+            <div class="skintype-icon">
+              <i data-lucide="shield"></i>
+            </div>
+            <h3 class="skintype-name">민감성 피부</h3>
+            <p class="skintype-desc">자극에 쉽게 반응하고 붉어지거나 가려움증이 생기는 피부</p>
+            <div class="skintype-benefits">
+              <div class="skintype-benefit">
+                <i data-lucide="check-circle"></i>
+                <span>저자극 천연 섬유로 자극 최소화</span>
+              </div>
+              <div class="skintype-benefit">
+                <i data-lucide="check-circle"></i>
+                <span>항균력이 피부 트러블 예방</span>
+              </div>
+              <div class="skintype-benefit">
+                <i data-lucide="check-circle"></i>
+                <span>화학 처리 없는 안전한 소재</span>
+              </div>
+              <div class="skintype-benefit">
+                <i data-lucide="check-circle"></i>
+                <span>KC 인증 1등급으로 안심</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skintype-card">
+            <div class="skintype-icon">
+              <i data-lucide="droplet"></i>
+            </div>
+            <h3 class="skintype-name">건성 피부</h3>
+            <p class="skintype-desc">피부가 당기고 각질이 잘 생기는 건조한 피부</p>
+            <div class="skintype-benefits">
+              <div class="skintype-benefit">
+                <i data-lucide="check-circle"></i>
+                <span>실크처럼 부드러워 마찰 최소화</span>
+              </div>
+              <div class="skintype-benefit">
+                <i data-lucide="check-circle"></i>
+                <span>수분을 빠르게 흡수해 각질 자극 방지</span>
+              </div>
+              <div class="skintype-benefit">
+                <i data-lucide="check-circle"></i>
+                <span>뻣뻣해지지 않아 피부 손상 없음</span>
+              </div>
+              <div class="skintype-benefit">
+                <i data-lucide="check-circle"></i>
+                <span>자연 건조에도 부드러운 촉감 유지</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skintype-card">
+            <div class="skintype-icon">
+              <i data-lucide="sun"></i>
+            </div>
+            <h3 class="skintype-name">지성 피부</h3>
+            <p class="skintype-desc">피지 분비가 많고 번들거리며 모공이 넓은 피부</p>
+            <div class="skintype-benefits">
+              <div class="skintype-benefit">
+                <i data-lucide="check-circle"></i>
+                <span>면 대비 2배 빠른 건조로 청결 유지</span>
+              </div>
+              <div class="skintype-benefit">
+                <i data-lucide="check-circle"></i>
+                <span>항균력으로 여드름균 번식 억제</span>
+              </div>
+              <div class="skintype-benefit">
+                <i data-lucide="check-circle"></i>
+                <span>섬유 95% 살균으로 위생적</span>
+              </div>
+              <div class="skintype-benefit">
+                <i data-lucide="check-circle"></i>
+                <span>수건 냄새 걱정 없음</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: 사이즈 가이드 -->
+    <section class="section size-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">SIZE GUIDE</p>
+          <h2 class="section-title">사이즈 가이드</h2>
+          <p class="section-desc">언커먼타올 페이스타월의 실측 사이즈와 용도를 확인하세요.</p>
+        </div>
+
+        <div class="size-content">
+          <div class="size-image">
+            <i data-lucide="image"></i>
+          </div>
+
+          <div class="size-table">
+            <div class="size-row size-header">
+              <div class="size-cell">제품</div>
+              <div class="size-cell">실측 사이즈</div>
+              <div class="size-cell">추천 용도</div>
+            </div>
+            <div class="size-row">
+              <div class="size-cell label">Blue Label 페이스타월</div>
+              <div class="size-cell">34cm × 85cm (±2cm)</div>
+              <div class="size-cell">세안, 샤워 후 얼굴 닦기</div>
+            </div>
+            <div class="size-row">
+              <div class="size-cell label">무게</div>
+              <div class="size-cell">216g (최적 GSM)</div>
+              <div class="size-cell">부드러움과 흡수력 균형</div>
+            </div>
+            <div class="size-row">
+              <div class="size-cell label">소재</div>
+              <div class="size-cell">뱀부 100% (습식 직조)</div>
+              <div class="size-cell">항균, 속건, 저자극</div>
+            </div>
+          </div>
+
+          <div class="size-note">
+            <p>※ 실측 사이즈는 제품마다 ±2cm 오차가 있을 수 있습니다.</p>
+            <p>※ 세탁 후 미세한 수축이 발생할 수 있으나 촉감과 기능에는 영향이 없습니다.</p>
+            <p>※ 모든 제품은 KC 인증 1등급 기준을 통과하였습니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand-name">UNCOMMON TOWEL</p>
+          <p class="footer-brand-desc">수건 하나에 진심인 브랜드<br>뱀부 100% 프리미엄 페이스타월</p>
+          <div style="margin-top:16px;">
+            <a href="#" style="display:inline-block;">
+              <i data-lucide="instagram" style="width:20px; height:20px; color:var(--text-light);"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">BRAND</p>
+          <a href="page_02.html">브랜드 철학</a>
+          <a href="page_03.html">브랜드 스토리</a>
+          <a href="page_05.html">소재 이야기</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">SHOP</p>
+          <a href="page_07.html">제품 전체</a>
+          <a href="page_08.html">타월 가이드</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">SUPPORT</p>
+          <a href="page_12.html">FAQ</a>
+          <a href="page_13.html">1:1 문의</a>
+          <a href="page_14.html">주문 조회</a>
+          <a href="page_15.html">매장 안내</a>
+        </div>
+      </div>
+      <div class="footer-grid" style="padding-top:24px; border-top:1px solid var(--border-light); border-bottom:none; padding-bottom:0;">
+        <div style="grid-column:1/-1;">
+          <p style="font-size:12px; color:var(--text-muted); line-height:1.7; margin-bottom:8px;">
+            언커먼타올 | 대표: [대표자명] | 사업자등록번호: [번호] | 통신판매업: [번호]<br>
+            주소: [서울 사무실 주소] | 대표전화: [전화번호] | 이메일: [이메일]
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Uncommon Towel. All rights reserved.</span>
+        <div class="footer-links">
+          <a href="#">개인정보처리방침</a>
+          <a href="#">이용약관</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOP Button -->
+  <div class="top-button" id="topButton">
+    <i data-lucide="arrow-up"></i>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    // Header Scroll Effect
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // TOP Button
+    const topButton = document.getElementById('topButton');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        topButton.classList.add('visible');
+      } else {
+        topButton.classList.remove('visible');
+      }
+    });
+    topButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
