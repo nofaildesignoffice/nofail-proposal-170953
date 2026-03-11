@@ -1,0 +1,640 @@
+<!-- PAGE: 브랜드 철학 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>브랜드 철학 | 언커먼타올 - 수건 하나만 만듭니다</title>
+  <meta name="description" content="4년간 5g 단위 테스트, 습식 직조, 12가지 연한 컬러만 고집하는 이유. 언커먼타올은 페이스타월 하나에 집중하는 브랜드입니다.">
+  <meta name="keywords" content="언커먼타올 브랜드 철학, 프리미엄 수건 브랜드, 뱀부 타월 철학, 프리미엄 수건, 뱀부 타월, 대나무 수건, 페이스타월, 항균 수건, 언커먼타올, uncommon towel">
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --text-black: #1A1A1A;
+      --text-dark: #333333;
+      --text-gray: #666666;
+      --text-light: #999999;
+      --text-muted: #BCBCBC;
+      --bg-white: #FFFFFF;
+      --bg-light: #F5F5F5;
+      --bg-dark: #2D2D2D;
+      --bg-black: #1A1A1A;
+      --border-light: #E0E0E0;
+      --border-default: #D0D0D0;
+      --placeholder-bg: #E0E0E0;
+      --placeholder-icon: #BCBCBC;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Pretendard', sans-serif;
+      color: var(--text-gray);
+      line-height: 1.6;
+      background: var(--bg-white);
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; font-family: inherit; background: none; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+      transition: all 0.3s;
+    }
+    .nav.scrolled {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-black);
+      letter-spacing: 0.5px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+    .nav-item {
+      position: relative;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+    .nav-item.active {
+      color: var(--text-black);
+      font-weight: 600;
+    }
+    .nav-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 8px 0;
+      margin-top: 16px;
+      min-width: 180px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: all 0.2s;
+      box-shadow: var(--shadow-md);
+    }
+    .nav-item:hover .nav-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .nav-dropdown a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: var(--text-dark);
+    }
+    .nav-dropdown a:hover {
+      background: var(--bg-light);
+      color: var(--text-black);
+    }
+    .nav-utils {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .nav-utils svg {
+      width: 20px;
+      height: 20px;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+    .cart-badge {
+      position: relative;
+    }
+    .cart-badge::after {
+      content: '0';
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background: var(--text-black);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mobile-menu-btn {
+      display: none;
+    }
+
+    /* Button */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-primary {
+      background: var(--text-black);
+      color: #FFFFFF;
+      border: 1px solid var(--text-black);
+    }
+    .btn-secondary {
+      background: var(--bg-white);
+      color: var(--text-black);
+      border: 1px solid var(--border-default);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 120px 0 80px;
+      background: var(--bg-white);
+    }
+    .hero-content {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero-title {
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--text-black);
+      line-height: 1.3;
+      margin-bottom: 24px;
+    }
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--text-gray);
+      line-height: 1.8;
+      margin-bottom: 48px;
+    }
+    .hero-image {
+      margin-top: 48px;
+    }
+    .img-placeholder {
+      background: var(--placeholder-bg);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+    .img-placeholder svg {
+      color: var(--placeholder-icon);
+      width: 48px;
+      height: 48px;
+    }
+
+    /* Content Section */
+    .content-section {
+      padding: 80px 0;
+    }
+    .content-section.bg-light {
+      background: var(--bg-light);
+    }
+    .content-text {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 16px;
+      color: var(--text-gray);
+      line-height: 1.9;
+      white-space: pre-line;
+    }
+
+    /* Philosophy Cards */
+    .philosophy-section {
+      padding: 80px 0;
+      background: var(--bg-white);
+    }
+    .section-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text-black);
+      line-height: 1.3;
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .philosophy-card {
+      padding: 40px 32px;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      text-align: center;
+    }
+    .card-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .card-icon svg {
+      width: 28px;
+      height: 28px;
+      color: var(--text-dark);
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 16px;
+    }
+    .card-desc {
+      font-size: 15px;
+      color: var(--text-gray);
+      line-height: 1.7;
+    }
+
+    /* Promise Section */
+    .promise-section {
+      padding: 80px 0;
+      background: var(--bg-light);
+    }
+    .promise-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .promise-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text-black);
+      line-height: 1.3;
+      margin-bottom: 24px;
+    }
+    .promise-subtitle {
+      font-size: 18px;
+      color: var(--text-gray);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    .promise-text {
+      font-size: 16px;
+      color: var(--text-gray);
+      line-height: 1.9;
+      white-space: pre-line;
+      margin-bottom: 40px;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 60px 0 32px;
+      background: var(--bg-white);
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .footer-brand-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .footer-brand-desc {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+    .footer-col-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: var(--text-light);
+      padding: 4px 0;
+    }
+    .footer-col a:hover {
+      color: var(--text-dark);
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 24px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .footer-links a {
+      margin-left: 12px;
+    }
+
+    /* Top Button */
+    .top-btn {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--text-black);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      box-shadow: var(--shadow-md);
+    }
+    .top-btn.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    .top-btn:hover {
+      transform: translateY(-4px);
+    }
+    .top-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .nav-utils svg {
+        width: 22px;
+        height: 22px;
+      }
+      
+      .hero-section {
+        padding: 80px 0 60px;
+      }
+      .hero-title {
+        font-size: 32px;
+      }
+      .hero-subtitle {
+        font-size: 16px;
+      }
+
+      .content-section {
+        padding: 60px 0;
+      }
+      .section-title,
+      .promise-title {
+        font-size: 28px;
+      }
+
+      .philosophy-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="page_01.html" class="nav-logo">UNCOMMON TOWEL</a>
+        <nav class="nav-links">
+          <div class="nav-item active">
+            <a href="page_02.html">브랜드</a>
+            <div class="nav-dropdown">
+              <a href="page_02.html">브랜드 철학</a>
+              <a href="page_03.html">브랜드 스토리</a>
+              <a href="page_04.html">브랜드 여정</a>
+              <a href="page_05.html">소재 이야기</a>
+              <a href="page_06.html">지속가능성</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="page_07.html">제품</a>
+          </div>
+          <div class="nav-item">
+            <a href="page_08.html">타월 가이드</a>
+          </div>
+          <div class="nav-item">
+            <a href="page_09.html">B2B문의</a>
+            <div class="nav-dropdown">
+              <a href="page_09.html">대량구매</a>
+              <a href="page_10.html">파트너십</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="page_11.html">고객 후기</a>
+          </div>
+          <div class="nav-item">
+            <a href="page_12.html">고객센터</a>
+            <div class="nav-dropdown">
+              <a href="page_12.html">FAQ</a>
+              <a href="page_13.html">1:1 문의</a>
+              <a href="page_14.html">주문 조회</a>
+              <a href="page_15.html">매장 안내</a>
+            </div>
+          </div>
+        </nav>
+        <div class="nav-utils">
+          <i data-lucide="search"></i>
+          <i data-lucide="user"></i>
+          <div class="cart-badge">
+            <i data-lucide="shopping-cart"></i>
+          </div>
+          <button class="mobile-menu-btn">
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section 1: 수건 하나만 만듭니다 -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">수건 하나만 만듭니다</h1>
+          <p class="hero-subtitle">슬리퍼도 만들지 않고, 우산도 만들지 않아요. 매일 얼굴에 닿는 이 한 장을 완벽하게 만드는 일에만 집중해요.</p>
+        </div>
+        <div class="hero-image">
+          <div class="img-placeholder" style="aspect-ratio:16/9; max-width:960px; margin:0 auto;">
+            <i data-lucide="image"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content: 국밥은 국밥 맛만 정확하게 -->
+    <section class="content-section bg-light">
+      <div class="container">
+        <div class="content-text">좋은 국밥집은 국밥 맛 하나로 승부해요. 반찬 가짓수나 인테리어가 아니라, 국물 한 숟갈의 깊이로요. 언커먼타올도 같아요. 수건 한 장이 줄 수 있는 경험의 끝을 보고 싶었어요.
+
+4년 동안 5g 단위로 280g까지 올려봤고, 다시 내려왔어요. 216g. 너무 무겁지 않아 빨리 마르고, 너무 가볍지 않아 얼굴을 감싸는 포근함이 남는 그 지점. 아내가 처음으로 '이거다'라고 말한 무게였어요.</div>
+      </div>
+    </section>
+
+    <!-- Section 2: 부드러움 그 이상의 기준 -->
+    <section class="philosophy-section">
+      <div class="container">
+        <h2 class="section-title">부드럽다는 말만으로는 부족했어요</h2>
+        <div class="philosophy-grid">
+          <div class="philosophy-card">
+            <div class="card-icon">
+              <i data-lucide="scale"></i>
+            </div>
+            <h3 class="card-title">5g의 차이</h3>
+            <p class="card-desc">280g에서 시작해 5g씩 줄여가며 50번 넘게 테스트했어요. 216g은 흡수력과 건조 속도, 촉감이 모두 만족스러운 유일한 지점이었어요.</p>
+          </div>
+          <div class="philosophy-card">
+            <div class="card-icon">
+              <i data-lucide="droplet"></i>
+            </div>
+            <h3 class="card-title">습식 직조</h3>
+            <p class="card-desc">70도 습도를 유지한 채 대나무 섬유를 짜요. 건식으로는 낼 수 없는 실크 같은 밀도가 만들어져요. 국내에서 이 공법을 쓰는 곳, 다섯 곳이 안 돼요.</p>
+          </div>
+          <div class="philosophy-card">
+            <div class="card-icon">
+              <i data-lucide="palette"></i>
+            </div>
+            <h3 class="card-title">색의 제한</h3>
+            <p class="card-desc">진한 색은 만들지 않아요. 염색 횟수가 늘수록 섬유가 거칠어지거든요. 12가지 극단적으로 연한 컬러만 고집하는 이유예요.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 확장보다 깊이를 택했어요 -->
+    <section class="promise-section">
+      <div class="container">
+        <div class="promise-inner">
+          <h2 class="promise-title">확장보다 깊이를 택했어요</h2>
+          <p class="promise-subtitle">유행하는 라이프스타일 브랜드가 되는 건 쉬워요. 수건 옆에 디퓨저를 놓고, 슬리퍼를 끼우면 되니까요. 하지만 그 순간, 수건은 '여러 물건 중 하나'가 돼요.</p>
+          <div class="promise-text">언커먼타올이 만드는 건 앞으로도 매일 얼굴에 닿는 것들뿐이에요. 페이스타월, 그리고 같은 뱀부 100% 소재로 만드는 가운까지. 이 범위를 넘지 않을 거예요.
+
+한 가지를 깊이 파는 브랜드가 오래간다고 믿어요.</div>
+          <a href="page_03.html" class="btn btn-primary">브랜드가 만들어진 이야기</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand-name">UNCOMMON TOWEL</p>
+          <p class="footer-brand-desc">언커먼타올 | 대표: [대표자명]<br>사업자등록번호: [번호] | 통신판매업: [번호]<br>주소: [서울 사무실 주소]<br>대표전화: [전화번호] | 이메일: [이메일]</p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">BRAND</p>
+          <a href="page_02.html">브랜드 철학</a>
+          <a href="page_03.html">브랜드 스토리</a>
+          <a href="page_05.html">소재 이야기</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">SHOP</p>
+          <a href="page_07.html">제품 전체</a>
+          <a href="page_08.html">타월 가이드</a>
+          <a href="page_11.html">고객 후기</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">SUPPORT</p>
+          <a href="page_12.html">FAQ</a>
+          <a href="page_13.html">1:1 문의</a>
+          <a href="page_14.html">주문 조회</a>
+          <a href="page_15.html">매장 안내</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Uncommon Towel. All rights reserved.</span>
+        <div class="footer-links">
+          <a href="#">개인정보처리방침</a>
+          <a href="#">이용약관</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Top Button -->
+  <button class="top-btn" id="topBtn">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
+  <script>
+    lucide.createIcons();
+
+    // Sticky header
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Top button
+    const topBtn = document.getElementById('topBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        topBtn.classList.add('visible');
+      } else {
+        topBtn.classList.remove('visible');
+      }
+    });
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
