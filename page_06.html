@@ -1,0 +1,958 @@
+<!-- PAGE: 지속가능성 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지속가능성 | 언커먼타올 - 뱀부 100% 프리미엄 페이스타월</title>
+  <meta name="description" content="언커먼타올은 뱀부 100% 소재와 친환경 생산 공정으로 지속가능한 라이프스타일을 제안합니다.">
+  <meta name="keywords" content="프리미엄 수건, 뱀부 타월, 대나무 수건, 페이스타월, 항균 수건, 언커먼타올, uncommon towel, 혼수 수건, 선물 수건, 친환경 수건, 지속가능성">
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --text-black: #1A1A1A;
+      --text-dark: #333333;
+      --text-gray: #666666;
+      --text-light: #999999;
+      --text-muted: #BCBCBC;
+      --bg-white: #FFFFFF;
+      --bg-light: #F5F5F5;
+      --bg-dark: #2D2D2D;
+      --border-light: #E0E0E0;
+      --border-default: #D0D0D0;
+      --placeholder-bg: #E0E0E0;
+      --placeholder-icon: #BCBCBC;
+      --accent: #8FBC8F;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Pretendard', sans-serif;
+      color: var(--text-gray);
+      line-height: 1.6;
+      background: var(--bg-white);
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; font-family: inherit; background: none; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ==========================================
+       헤더
+       ========================================== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-black);
+      letter-spacing: 0.5px;
+    }
+    .gnb {
+      display: flex;
+      gap: 36px;
+    }
+    .gnb-item {
+      position: relative;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+    .gnb-item.active {
+      color: var(--text-black);
+      font-weight: 600;
+    }
+    .gnb-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 16px;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-md);
+      min-width: 160px;
+      padding: 8px 0;
+    }
+    .gnb-item:hover .gnb-dropdown {
+      display: block;
+    }
+    .gnb-dropdown a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: var(--text-dark);
+    }
+    .gnb-dropdown a:hover {
+      background: var(--bg-light);
+    }
+    .header-utils {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .header-utils svg {
+      width: 22px;
+      height: 22px;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+    .mobile-menu-btn {
+      display: none;
+    }
+
+    /* ==========================================
+       섹션 공통
+       ========================================== */
+    .section {
+      padding: 100px 0;
+    }
+    .section-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    .section-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text-black);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-gray);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+    .text-center { text-align: center; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+
+    /* ==========================================
+       Hero
+       ========================================== */
+    .hero {
+      padding: 140px 0 100px;
+      background: var(--bg-white);
+      text-align: center;
+    }
+    .hero .section-label {
+      color: var(--accent);
+    }
+    .hero .section-title {
+      font-size: 42px;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+    .hero .section-desc {
+      margin: 0 auto;
+    }
+
+    /* ==========================================
+       Section 1: 지속가능성 철학
+       ========================================== */
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 60px;
+    }
+    .philosophy-card {
+      text-align: center;
+      padding: 40px 24px;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+    }
+    .philosophy-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .philosophy-icon svg {
+      width: 32px;
+      height: 32px;
+      color: var(--accent);
+    }
+    .philosophy-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 12px;
+    }
+    .philosophy-desc {
+      font-size: 15px;
+      color: var(--text-gray);
+      line-height: 1.7;
+    }
+
+    /* ==========================================
+       Section 2: 뱀부 소재의 환경적 가치
+       ========================================== */
+    .value-section {
+      background: var(--bg-light);
+    }
+    .value-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 48px;
+    }
+    .value-stats {
+      display: grid;
+      gap: 32px;
+    }
+    .value-stat-item {
+      padding: 28px 32px;
+      background: var(--bg-white);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+    }
+    .value-stat-number {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 8px;
+    }
+    .value-stat-label {
+      font-size: 15px;
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+    .img-placeholder {
+      background: var(--placeholder-bg);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      aspect-ratio: 4/3;
+    }
+    .img-placeholder svg {
+      color: var(--placeholder-icon);
+      width: 48px;
+      height: 48px;
+    }
+
+    /* ==========================================
+       Section 3: 생산 과정의 책임
+       ========================================== */
+    .process-list {
+      max-width: 800px;
+      margin: 60px auto 0;
+    }
+    .process-item {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .process-item:first-child {
+      padding-top: 0;
+    }
+    .process-item:last-child {
+      border-bottom: none;
+    }
+    .process-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .process-content h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 8px;
+    }
+    .process-content p {
+      font-size: 15px;
+      color: var(--text-gray);
+      line-height: 1.7;
+    }
+
+    /* ==========================================
+       Section 4: 포장재와 배송
+       ========================================== */
+    .packaging-section {
+      background: var(--bg-light);
+    }
+    .packaging-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 48px;
+    }
+    .packaging-list {
+      display: grid;
+      gap: 24px;
+    }
+    .packaging-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 24px;
+      background: var(--bg-white);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+    }
+    .packaging-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .packaging-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--accent);
+    }
+    .packaging-content h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 6px;
+    }
+    .packaging-content p {
+      font-size: 14px;
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+
+    /* ==========================================
+       Section 5: 장기 사용 설계
+       ========================================== */
+    .longevity-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 48px;
+    }
+    .longevity-features {
+      display: grid;
+      gap: 28px;
+    }
+    .longevity-feature {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .longevity-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .longevity-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--text-dark);
+    }
+    .longevity-feature h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 6px;
+    }
+    .longevity-feature p {
+      font-size: 14px;
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+
+    /* ==========================================
+       Section 6: 우리의 약속
+       ========================================== */
+    .promise-section {
+      background: var(--bg-dark);
+      color: #FFFFFF;
+      text-align: center;
+    }
+    .promise-section .section-label {
+      color: rgba(255,255,255,0.6);
+    }
+    .promise-section .section-title {
+      color: #FFFFFF;
+    }
+    .promise-section .section-desc {
+      color: rgba(255,255,255,0.7);
+      margin: 0 auto;
+    }
+    .promise-quote {
+      max-width: 720px;
+      margin: 48px auto 0;
+      padding: 40px;
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .promise-quote p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.9);
+      font-style: italic;
+    }
+    .promise-author {
+      margin-top: 24px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================
+       푸터
+       ========================================== */
+    .footer {
+      padding: 60px 0 32px;
+      background: var(--bg-white);
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .footer-brand {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .footer-info {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+    .footer-col h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: var(--text-light);
+      padding: 6px 0;
+    }
+    .footer-col a:hover {
+      color: var(--text-dark);
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .footer-links {
+      display: flex;
+      gap: 16px;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+    }
+    .footer-links a:hover {
+      color: var(--text-gray);
+    }
+
+    /* ==========================================
+       TOP 버튼
+       ========================================== */
+    .top-btn {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .top-btn.visible {
+      opacity: 1;
+    }
+    .top-btn svg {
+      width: 24px;
+      height: 24px;
+      color: #FFFFFF;
+    }
+
+    /* ==========================================
+       반응형
+       ========================================== */
+    @media (max-width: 768px) {
+      .gnb {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .mobile-menu-btn svg {
+        width: 24px;
+        height: 24px;
+        color: var(--text-dark);
+      }
+      
+      .section {
+        padding: 60px 0;
+      }
+      .hero {
+        padding: 100px 0 60px;
+      }
+      .section-title {
+        font-size: 28px;
+      }
+      .hero .section-title {
+        font-size: 32px;
+      }
+      
+      .philosophy-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .value-grid,
+      .packaging-grid,
+      .longevity-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+      
+      .top-btn {
+        bottom: 24px;
+        right: 24px;
+        width: 44px;
+        height: 44px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="page_01.html" class="logo">UNCOMMON TOWEL</a>
+        <nav class="gnb">
+          <div class="gnb-item active">
+            <a href="page_02.html">브랜드</a>
+            <div class="gnb-dropdown">
+              <a href="page_02.html">브랜드 철학</a>
+              <a href="page_03.html">브랜드 스토리</a>
+              <a href="page_04.html">브랜드 여정</a>
+              <a href="page_05.html">소재 이야기</a>
+              <a href="page_06.html">지속가능성</a>
+            </div>
+          </div>
+          <div class="gnb-item">
+            <a href="page_07.html">제품</a>
+          </div>
+          <div class="gnb-item">
+            <a href="page_08.html">타월 가이드</a>
+          </div>
+          <div class="gnb-item">
+            <a href="page_09.html">B2B문의</a>
+            <div class="gnb-dropdown">
+              <a href="page_09.html">대량구매</a>
+              <a href="page_10.html">파트너십</a>
+            </div>
+          </div>
+          <div class="gnb-item">
+            <a href="page_11.html">고객 후기</a>
+          </div>
+          <div class="gnb-item">
+            <a href="page_12.html">고객센터</a>
+            <div class="gnb-dropdown">
+              <a href="page_12.html">FAQ</a>
+              <a href="page_13.html">1:1 문의</a>
+              <a href="page_14.html">주문 조회</a>
+              <a href="page_15.html">매장 안내</a>
+            </div>
+          </div>
+        </nav>
+        <div class="header-utils">
+          <i data-lucide="search"></i>
+          <i data-lucide="user"></i>
+          <i data-lucide="shopping-cart"></i>
+          <button class="mobile-menu-btn">
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <p class="section-label">SUSTAINABILITY</p>
+        <h1 class="section-title">작은 선택이 만드는<br>큰 변화</h1>
+        <p class="section-desc">언커먼타올은 매일 사용하는 수건 한 장부터<br>지속가능한 라이프스타일을 실천합니다.</p>
+      </div>
+    </section>
+
+    <!-- Section 1: 지속가능성 철학 -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">OUR PHILOSOPHY</p>
+          <h2 class="section-title">지속가능성 철학</h2>
+          <p class="section-desc mx-auto">우리는 제품의 전 과정에서 환경과 사람,<br>그리고 미래를 생각합니다.</p>
+        </div>
+        <div class="philosophy-grid">
+          <div class="philosophy-card">
+            <div class="philosophy-icon">
+              <i data-lucide="leaf"></i>
+            </div>
+            <h3 class="philosophy-title">책임 있는 소재 선택</h3>
+            <p class="philosophy-desc">재생 가능하고 빠르게 자라는 뱀부 100%를 선택하여 환경 부담을 최소화합니다.</p>
+          </div>
+          <div class="philosophy-card">
+            <div class="philosophy-icon">
+              <i data-lucide="recycle"></i>
+            </div>
+            <h3 class="philosophy-title">순환 가능한 디자인</h3>
+            <p class="philosophy-desc">오래 사용할 수 있는 내구성과 품질로 일회성 소비를 줄이고 순환 경제에 기여합니다.</p>
+          </div>
+          <div class="philosophy-card">
+            <div class="philosophy-icon">
+              <i data-lucide="heart"></i>
+            </div>
+            <h3 class="philosophy-title">투명한 생산 과정</h3>
+            <p class="philosophy-desc">윤리적 생산 환경과 공정한 거래를 통해 모두가 존중받는 가치를 만듭니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: 뱀부 소재의 환경적 가치 -->
+    <section class="section value-section">
+      <div class="container">
+        <div>
+          <p class="section-label">BAMBOO BENEFITS</p>
+          <h2 class="section-title">뱀부 소재의 환경적 가치</h2>
+          <p class="section-desc">면화 재배에 비해 압도적으로 낮은 환경 부담,<br>뱀부는 지속가능한 미래를 위한 선택입니다.</p>
+        </div>
+        <div class="value-grid">
+          <div class="value-stats">
+            <div class="value-stat-item">
+              <p class="value-stat-number">1/3</p>
+              <p class="value-stat-label">면 대비 물 사용량 3분의 1 수준</p>
+            </div>
+            <div class="value-stat-item">
+              <p class="value-stat-number">0</p>
+              <p class="value-stat-label">농약·제초제 없이도 자라는 강한 생명력</p>
+            </div>
+            <div class="value-stat-item">
+              <p class="value-stat-number">35%</p>
+              <p class="value-stat-label">면 대비 35% 더 많은 산소 생성</p>
+            </div>
+          </div>
+          <div class="img-placeholder">
+            <i data-lucide="image"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 생산 과정의 책임 -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">PRODUCTION</p>
+          <h2 class="section-title">생산 과정의 책임</h2>
+          <p class="section-desc mx-auto">공정 하나하나에 환경과 인권을 고려한<br>책임 있는 생산 시스템을 운영합니다.</p>
+        </div>
+        <div class="process-list">
+          <div class="process-item">
+            <div class="process-number">1</div>
+            <div class="process-content">
+              <h3>친환경 염색 공정</h3>
+              <p>유해 화학물질을 최소화한 염색 방식으로 작업자와 환경을 보호합니다.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-number">2</div>
+            <div class="process-content">
+              <h3>물 절약 시스템</h3>
+              <p>습식 직조 과정에서 발생하는 물을 재순환하여 사용량을 줄입니다.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-number">3</div>
+            <div class="process-content">
+              <h3>윤리적 노동 환경</h3>
+              <p>공정한 임금과 안전한 작업 환경을 보장하는 협력 공장과만 함께합니다.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="process-number">4</div>
+            <div class="process-content">
+              <h3>에너지 효율 관리</h3>
+              <p>생산 과정의 에너지 소비를 지속적으로 모니터링하고 개선합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: 포장재와 배송 -->
+    <section class="section packaging-section">
+      <div class="container">
+        <div>
+          <p class="section-label">PACKAGING</p>
+          <h2 class="section-title">포장재와 배송</h2>
+          <p class="section-desc">제품뿐 아니라 포장과 배송 과정에서도<br>환경을 생각하는 선택을 실천합니다.</p>
+        </div>
+        <div class="packaging-grid">
+          <div class="packaging-list">
+            <div class="packaging-item">
+              <div class="packaging-icon">
+                <i data-lucide="box"></i>
+              </div>
+              <div class="packaging-content">
+                <h4>재활용 가능 패키징</h4>
+                <p>FSC 인증 종이와 재활용 가능한 소재로만 구성된 포장재를 사용합니다.</p>
+              </div>
+            </div>
+            <div class="packaging-item">
+              <div class="packaging-icon">
+                <i data-lucide="package"></i>
+              </div>
+              <div class="packaging-content">
+                <h4>최소 포장 원칙</h4>
+                <p>과대 포장을 지양하고 필요한 최소한의 보호재만 사용합니다.</p>
+              </div>
+            </div>
+            <div class="packaging-item">
+              <div class="packaging-icon">
+                <i data-lucide="truck"></i>
+              </div>
+              <div class="packaging-content">
+                <h4>탄소 중립 배송</h4>
+                <p>친환경 배송 파트너와 협력하여 배송 과정의 탄소 발자국을 줄입니다.</p>
+              </div>
+            </div>
+            <div class="packaging-item">
+              <div class="packaging-icon">
+                <i data-lucide="info"></i>
+              </div>
+              <div class="packaging-content">
+                <h4>분리배출 안내</h4>
+                <p>모든 패키징에 명확한 분리배출 가이드를 표기하여 재활용률을 높입니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="img-placeholder">
+            <i data-lucide="image"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: 장기 사용 설계 -->
+    <section class="section">
+      <div class="container">
+        <div>
+          <p class="section-label">DURABILITY</p>
+          <h2 class="section-title">장기 사용 설계</h2>
+          <p class="section-desc">오래 쓸 수 있는 제품이야말로<br>가장 친환경적인 제품입니다.</p>
+        </div>
+        <div class="longevity-grid">
+          <div class="img-placeholder">
+            <i data-lucide="image"></i>
+          </div>
+          <div class="longevity-features">
+            <div class="longevity-feature">
+              <div class="longevity-icon">
+                <i data-lucide="shield"></i>
+              </div>
+              <div>
+                <h4>최고 등급 세탁 견뢰도</h4>
+                <p>수백 번의 세탁에도 변형·변색 없이 처음의 품질을 유지합니다.</p>
+              </div>
+            </div>
+            <div class="longevity-feature">
+              <div class="longevity-icon">
+                <i data-lucide="zap"></i>
+              </div>
+              <div>
+                <h4>빠른 건조 = 긴 수명</h4>
+                <p>2배 빠른 건조 속도로 세균 번식을 억제하고 섬유 손상을 줄입니다.</p>
+              </div>
+            </div>
+            <div class="longevity-feature">
+              <div class="longevity-icon">
+                <i data-lucide="award"></i>
+              </div>
+              <div>
+                <h4>품질 보증 제도</h4>
+                <p>정상 사용 중 발생한 품질 문제에 대해 책임지는 A/S 시스템을 운영합니다.</p>
+              </div>
+            </div>
+            <div class="longevity-feature">
+              <div class="longevity-icon">
+                <i data-lucide="book-open"></i>
+              </div>
+              <div>
+                <h4>올바른 사용 가이드 제공</h4>
+                <p>수건의 수명을 최대한 늘릴 수 있는 세탁·보관·관리법을 상세히 안내합니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: 우리의 약속 -->
+    <section class="section promise-section">
+      <div class="container">
+        <p class="section-label">OUR COMMITMENT</p>
+        <h2 class="section-title">우리의 약속</h2>
+        <p class="section-desc">언커먼타올은 지속가능성을 단순한 마케팅이 아닌<br>브랜드 운영의 핵심 가치로 삼습니다.</p>
+        <div class="promise-quote">
+          <p>"우리는 한 장의 수건을 만들 때도 그것이 세상에 미치는 영향을 생각합니다. 제품의 시작부터 끝까지, 그리고 그 이후까지 책임지는 것이 우리가 추구하는 지속가능성입니다."</p>
+          <p class="promise-author">— 언커먼타올 팀 일동</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">UNCOMMON TOWEL</p>
+          <div class="footer-info">
+            대표: [대표자명]<br>
+            사업자등록번호: [번호]<br>
+            통신판매업: [번호]<br>
+            주소: [서울 사무실 주소]<br>
+            대표전화: [전화번호]<br>
+            이메일: [이메일]
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>BRAND</h4>
+          <a href="page_02.html">브랜드 철학</a>
+          <a href="page_03.html">브랜드 스토리</a>
+          <a href="page_05.html">소재 이야기</a>
+        </div>
+        <div class="footer-col">
+          <h4>SHOP</h4>
+          <a href="page_07.html">제품 전체</a>
+          <a href="page_08.html">타월 가이드</a>
+        </div>
+        <div class="footer-col">
+          <h4>SUPPORT</h4>
+          <a href="page_12.html">FAQ</a>
+          <a href="page_13.html">1:1 문의</a>
+          <a href="page_14.html">주문 조회</a>
+          <a href="page_15.html">매장 안내</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Uncommon Towel. All rights reserved.</span>
+        <div class="footer-links">
+          <a href="#">개인정보처리방침</a>
+          <a href="#">이용약관</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOP 버튼 -->
+  <div class="top-btn" id="topBtn">
+    <i data-lucide="arrow-up"></i>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    // TOP 버튼
+    const topBtn = document.getElementById('topBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        topBtn.classList.add('visible');
+      } else {
+        topBtn.classList.remove('visible');
+      }
+    });
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
