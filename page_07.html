@@ -1,0 +1,873 @@
+<!-- PAGE: 제품 (Product) -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제품 | 언커먼타올 - 뱀부 100% 프리미엄 페이스타월</title>
+  <meta name="description" content="뱀부 100% 습식 직조로 완성한 언커먼타올의 프리미엄 페이스타월. 12가지 몰디브 영감 컬러와 216g 최적 중량으로 극한의 부드러움을 경험하세요.">
+  <meta name="keywords" content="프리미엄 수건, 뱀부 타월, 대나무 수건, 페이스타월, 항균 수건, 언커먼타올, uncommon towel, 혼수 수건, 선물 수건">
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --text-black: #1A1A1A;
+      --text-dark: #333333;
+      --text-gray: #666666;
+      --text-light: #999999;
+      --text-muted: #BCBCBC;
+      --bg-white: #FFFFFF;
+      --bg-light: #F5F5F5;
+      --bg-dark: #2D2D2D;
+      --border-light: #E0E0E0;
+      --border-default: #D0D0D0;
+      --placeholder-bg: #E0E0E0;
+      --placeholder-icon: #BCBCBC;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Pretendard', sans-serif;
+      color: var(--text-gray);
+      line-height: 1.6;
+      background: var(--bg-white);
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; font-family: inherit; background: none; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+      transition: all 0.3s;
+    }
+    .header.scrolled {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      position: relative;
+    }
+    .logo {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-black);
+      letter-spacing: 1px;
+    }
+    .gnb {
+      display: flex;
+      gap: 48px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .gnb > li { position: relative; }
+    .gnb > li > a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-dark);
+      padding: 8px 0;
+      display: block;
+    }
+    .gnb > li.active > a { color: var(--text-black); font-weight: 600; }
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 12px 0;
+      min-width: 160px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s, visibility 0.2s;
+      box-shadow: var(--shadow-md);
+      margin-top: 8px;
+    }
+    .gnb > li:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+    }
+    .dropdown a {
+      display: block;
+      padding: 8px 20px;
+      font-size: 14px;
+      color: var(--text-gray);
+      white-space: nowrap;
+    }
+    .dropdown a:hover {
+      background: var(--bg-light);
+      color: var(--text-black);
+    }
+    .header-utils {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .header-utils button,
+    .header-utils a {
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    .header-utils svg {
+      width: 22px;
+      height: 22px;
+    }
+    .cart-badge {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background: var(--text-black);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mobile-menu-btn {
+      display: none;
+    }
+
+    /* Product List */
+    .product-section {
+      padding: 80px 0 100px;
+    }
+    .product-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .product-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 16px;
+    }
+    .product-header p {
+      font-size: 16px;
+      color: var(--text-gray);
+    }
+
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 10px 24px;
+      border: 1px solid var(--border-default);
+      border-radius: 24px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-dark);
+      background: var(--bg-white);
+      transition: all 0.2s;
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--text-black);
+      color: white;
+      border-color: var(--text-black);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .product-card {
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .product-image {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: var(--placeholder-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .product-image svg {
+      width: 64px;
+      height: 64px;
+      color: var(--placeholder-icon);
+    }
+    .product-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--text-black);
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+    .product-info {
+      padding: 24px;
+    }
+    .product-category {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .product-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 8px;
+    }
+    .product-desc {
+      font-size: 14px;
+      color: var(--text-gray);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .product-colors {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .color-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid var(--border-light);
+      background: var(--bg-light);
+    }
+    .product-price {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 16px;
+    }
+    .product-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .feature-tag {
+      font-size: 12px;
+      color: var(--text-gray);
+      background: var(--bg-light);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+      width: 100%;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-primary {
+      background: var(--text-black);
+      color: white;
+      border: 1px solid var(--text-black);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-white);
+      border-top: 1px solid var(--border-light);
+      padding: 60px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .footer-brand-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    .footer-brand-desc {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .footer-company-info {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    .footer-col-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: var(--text-light);
+      padding: 6px 0;
+    }
+    .footer-col a:hover {
+      color: var(--text-black);
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .footer-bottom-links {
+      display: flex;
+      gap: 16px;
+    }
+    .footer-bottom-links a {
+      color: var(--text-muted);
+    }
+    .footer-bottom-links a:hover {
+      color: var(--text-dark);
+    }
+
+    /* TOP Button */
+    .top-btn {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--text-black);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+      z-index: 99;
+    }
+    .top-btn.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    .top-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .gnb { display: none; }
+      .mobile-menu-btn {
+        display: flex;
+        color: var(--text-dark);
+      }
+      .mobile-menu-btn svg {
+        width: 24px;
+        height: 24px;
+      }
+      .product-section {
+        padding: 60px 0 80px;
+      }
+      .product-header h1 {
+        font-size: 28px;
+      }
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+      .top-btn {
+        bottom: 24px;
+        right: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="page_01.html" class="logo">UNCOMMON TOWEL</a>
+        
+        <nav>
+          <ul class="gnb">
+            <li>
+              <a href="page_02.html">브랜드</a>
+              <ul class="dropdown">
+                <li><a href="page_02.html">브랜드 철학</a></li>
+                <li><a href="page_03.html">브랜드 스토리</a></li>
+                <li><a href="page_04.html">브랜드 여정</a></li>
+                <li><a href="page_05.html">소재 이야기</a></li>
+                <li><a href="page_06.html">지속가능성</a></li>
+              </ul>
+            </li>
+            <li class="active"><a href="page_07.html">제품</a></li>
+            <li><a href="page_08.html">타월 가이드</a></li>
+            <li>
+              <a href="page_09.html">B2B문의</a>
+              <ul class="dropdown">
+                <li><a href="page_09.html">대량구매</a></li>
+                <li><a href="page_10.html">파트너십</a></li>
+              </ul>
+            </li>
+            <li><a href="page_11.html">고객 후기</a></li>
+            <li>
+              <a href="page_12.html">고객센터</a>
+              <ul class="dropdown">
+                <li><a href="page_12.html">FAQ</a></li>
+                <li><a href="page_13.html">1:1 문의</a></li>
+                <li><a href="page_14.html">주문 조회</a></li>
+                <li><a href="page_15.html">매장 안내</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-utils">
+          <button><i data-lucide="search"></i></button>
+          <a href="#"><i data-lucide="user"></i></a>
+          <a href="#">
+            <i data-lucide="shopping-cart"></i>
+            <span class="cart-badge">0</span>
+          </a>
+          <button class="mobile-menu-btn"><i data-lucide="menu"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Product List Section -->
+    <section class="product-section">
+      <div class="container">
+        <div class="product-header">
+          <h1>뱀부 100% 프리미엄 페이스타월</h1>
+          <p>4년간의 연구 끝에 완성한 최적 216g, 12가지 몰디브 영감 컬러</p>
+        </div>
+
+        <div class="filter-bar">
+          <button class="filter-btn active">전체</button>
+          <button class="filter-btn">Blue Label</button>
+          <button class="filter-btn">패키지</button>
+          <button class="filter-btn">단품</button>
+        </div>
+
+        <div class="product-grid">
+          <!-- Product Card 1 -->
+          <div class="product-card">
+            <div class="product-image">
+              <i data-lucide="image"></i>
+              <span class="product-badge">BEST</span>
+            </div>
+            <div class="product-info">
+              <p class="product-category">Blue Label · 6컬러</p>
+              <h3 class="product-name">프리미엄 페이스타월 - Blue Label</h3>
+              <p class="product-desc">뱀부 100% 습식 직조, 216g 최적 중량</p>
+              <div class="product-colors">
+                <span class="color-dot"></span>
+                <span class="color-dot"></span>
+                <span class="color-dot"></span>
+                <span class="color-dot"></span>
+                <span class="color-dot"></span>
+                <span class="color-dot"></span>
+              </div>
+              <div class="product-features">
+                <span class="feature-tag">KC 인증 1등급</span>
+                <span class="feature-tag">항균 95%</span>
+                <span class="feature-tag">흡수속도 최고</span>
+              </div>
+              <p class="product-price">14,000원</p>
+              <a href="#" class="btn btn-primary">상품 보기</a>
+            </div>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div class="product-card">
+            <div class="product-image">
+              <i data-lucide="image"></i>
+            </div>
+            <div class="product-info">
+              <p class="product-category">Blue Label · 패키지</p>
+              <h3 class="product-name">스타터 세트 (3장)</h3>
+              <p class="product-desc">인기 컬러 3종으로 구성한 첫 구매 추천 세트</p>
+              <div class="product-colors">
+                <span class="color-dot"></span>
+                <span class="color-dot"></span>
+                <span class="color-dot"></span>
+              </div>
+              <div class="product-features">
+                <span class="feature-tag">민트스톤 패키징</span>
+                <span class="feature-tag">리플렛 포함</span>
+              </div>
+              <p class="product-price">39,900원</p>
+              <a href="#" class="btn btn-primary">상품 보기</a>
+            </div>
+          </div>
+
+          <!-- Product Card 3 -->
+          <div class="product-card">
+            <div class="product-image">
+              <i data-lucide="image"></i>
+            </div>
+            <div class="product-info">
+              <p class="product-category">Blue Label · 패키지</p>
+              <h3 class="product-name">프리미엄 세트 (6장)</h3>
+              <p class="product-desc">6가지 컬러 전체를 경험하는 풀 컬렉션</p>
+              <div class="product-colors">
+                <span class="color-dot"></span>
+                <span class="color-dot"></span>
+                <span class="color-dot"></span>
+                <span class="color-dot"></span>
+                <span class="color-dot"></span>
+                <span class="color-dot"></span>
+              </div>
+              <div class="product-features">
+                <span class="feature-tag">프리미엄 박스</span>
+                <span class="feature-tag">혼수 추천</span>
+              </div>
+              <p class="product-price">79,000원</p>
+              <a href="#" class="btn btn-primary">상품 보기</a>
+            </div>
+          </div>
+
+          <!-- Product Card 4 -->
+          <div class="product-card">
+            <div class="product-image">
+              <i data-lucide="image"></i>
+            </div>
+            <div class="product-info">
+              <p class="product-category">Blue Label · 단품</p>
+              <h3 class="product-name">미스트 블루 (Mist Blue)</h3>
+              <p class="product-desc">은은한 블루 톤의 시그니처 컬러</p>
+              <div class="product-colors">
+                <span class="color-dot"></span>
+              </div>
+              <div class="product-features">
+                <span class="feature-tag">216g</span>
+                <span class="feature-tag">70x35cm</span>
+              </div>
+              <p class="product-price">14,000원</p>
+              <a href="#" class="btn btn-primary">상품 보기</a>
+            </div>
+          </div>
+
+          <!-- Product Card 5 -->
+          <div class="product-card">
+            <div class="product-image">
+              <i data-lucide="image"></i>
+            </div>
+            <div class="product-info">
+              <p class="product-category">Blue Label · 단품</p>
+              <h3 class="product-name">샌드 베이지 (Sand Beige)</h3>
+              <p class="product-desc">따뜻하고 자연스러운 중립 톤</p>
+              <div class="product-colors">
+                <span class="color-dot"></span>
+              </div>
+              <div class="product-features">
+                <span class="feature-tag">216g</span>
+                <span class="feature-tag">70x35cm</span>
+              </div>
+              <p class="product-price">14,000원</p>
+              <a href="#" class="btn btn-primary">상품 보기</a>
+            </div>
+          </div>
+
+          <!-- Product Card 6 -->
+          <div class="product-card">
+            <div class="product-image">
+              <i data-lucide="image"></i>
+            </div>
+            <div class="product-info">
+              <p class="product-category">Blue Label · 단품</p>
+              <h3 class="product-name">코랄 핑크 (Coral Pink)</h3>
+              <p class="product-desc">생기 있는 핑크 컬러로 포인트</p>
+              <div class="product-colors">
+                <span class="color-dot"></span>
+              </div>
+              <div class="product-features">
+                <span class="feature-tag">216g</span>
+                <span class="feature-tag">70x35cm</span>
+              </div>
+              <p class="product-price">14,000원</p>
+              <a href="#" class="btn btn-primary">상품 보기</a>
+            </div>
+          </div>
+
+          <!-- Product Card 7 -->
+          <div class="product-card">
+            <div class="product-image">
+              <i data-lucide="image"></i>
+            </div>
+            <div class="product-info">
+              <p class="product-category">Blue Label · 단품</p>
+              <h3 class="product-name">라벤더 그레이 (Lavender Gray)</h3>
+              <p class="product-desc">세련된 퍼플 그레이 톤</p>
+              <div class="product-colors">
+                <span class="color-dot"></span>
+              </div>
+              <div class="product-features">
+                <span class="feature-tag">216g</span>
+                <span class="feature-tag">70x35cm</span>
+              </div>
+              <p class="product-price">14,000원</p>
+              <a href="#" class="btn btn-primary">상품 보기</a>
+            </div>
+          </div>
+
+          <!-- Product Card 8 -->
+          <div class="product-card">
+            <div class="product-image">
+              <i data-lucide="image"></i>
+            </div>
+            <div class="product-info">
+              <p class="product-category">Blue Label · 단품</p>
+              <h3 class="product-name">민트스톤 (Mintstone)</h3>
+              <p class="product-desc">브랜드 시그니처 민트 컬러</p>
+              <div class="product-colors">
+                <span class="color-dot"></span>
+              </div>
+              <div class="product-features">
+                <span class="feature-tag">216g</span>
+                <span class="feature-tag">70x35cm</span>
+              </div>
+              <p class="product-price">14,000원</p>
+              <a href="#" class="btn btn-primary">상품 보기</a>
+            </div>
+          </div>
+
+          <!-- Product Card 9 -->
+          <div class="product-card">
+            <div class="product-image">
+              <i data-lucide="image"></i>
+            </div>
+            <div class="product-info">
+              <p class="product-category">Blue Label · 단품</p>
+              <h3 class="product-name">차콜 그레이 (Charcoal Gray)</h3>
+              <p class="product-desc">모던하고 깊은 다크 톤</p>
+              <div class="product-colors">
+                <span class="color-dot"></span>
+              </div>
+              <div class="product-features">
+                <span class="feature-tag">216g</span>
+                <span class="feature-tag">70x35cm</span>
+              </div>
+              <p class="product-price">14,000원</p>
+              <a href="#" class="btn btn-primary">상품 보기</a>
+            </div>
+          </div>
+
+          <!-- Product Card 10 -->
+          <div class="product-card">
+            <div class="product-image">
+              <i data-lucide="image"></i>
+              <span class="product-badge">선물 추천</span>
+            </div>
+            <div class="product-info">
+              <p class="product-category">Blue Label · 기념품</p>
+              <h3 class="product-name">기업 기념품 패키지</h3>
+              <p class="product-desc">대량 구매 시 커스텀 패키징 가능</p>
+              <div class="product-features">
+                <span class="feature-tag">B2B 전용</span>
+                <span class="feature-tag">로고 인쇄</span>
+                <span class="feature-tag">견적 문의</span>
+              </div>
+              <p class="product-price">별도 문의</p>
+              <a href="page_09.html" class="btn btn-primary">견적 문의하기</a>
+            </div>
+          </div>
+
+          <!-- Product Card 11 -->
+          <div class="product-card">
+            <div class="product-image">
+              <i data-lucide="image"></i>
+            </div>
+            <div class="product-info">
+              <p class="product-category">Blue Label · 패키지</p>
+              <h3 class="product-name">혼수 세트 (12장)</h3>
+              <p class="product-desc">신혼부부를 위한 프리미엄 세트</p>
+              <div class="product-colors">
+                <span class="color-dot"></span>
+                <span class="color-dot"></span>
+                <span class="color-dot"></span>
+                <span class="color-dot"></span>
+                <span class="color-dot"></span>
+                <span class="color-dot"></span>
+              </div>
+              <div class="product-features">
+                <span class="feature-tag">럭셔리 박스</span>
+                <span class="feature-tag">감사카드 포함</span>
+              </div>
+              <p class="product-price">155,000원</p>
+              <a href="#" class="btn btn-primary">상품 보기</a>
+            </div>
+          </div>
+
+          <!-- Product Card 12 -->
+          <div class="product-card">
+            <div class="product-image">
+              <i data-lucide="image"></i>
+            </div>
+            <div class="product-info">
+              <p class="product-category">Blue Label · 패키지</p>
+              <h3 class="product-name">선물 세트 (2장)</h3>
+              <p class="product-desc">부담 없는 답례품 추천 세트</p>
+              <div class="product-colors">
+                <span class="color-dot"></span>
+                <span class="color-dot"></span>
+              </div>
+              <div class="product-features">
+                <span class="feature-tag">민트스톤 박스</span>
+                <span class="feature-tag">리본 포장</span>
+              </div>
+              <p class="product-price">27,000원</p>
+              <a href="#" class="btn btn-primary">상품 보기</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand-name">UNCOMMON TOWEL</p>
+          <p class="footer-brand-desc">뱀부 100% 프리미엄 페이스타월</p>
+          <div class="footer-company-info">
+            대표: [대표자명]<br>
+            사업자등록번호: [번호]<br>
+            통신판매업: [번호]<br>
+            주소: [서울 사무실 주소]<br>
+            대표전화: [전화번호]<br>
+            이메일: [이메일]
+          </div>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">BRAND</p>
+          <a href="page_02.html">브랜드 철학</a>
+          <a href="page_03.html">브랜드 스토리</a>
+          <a href="page_05.html">소재 이야기</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">SHOP</p>
+          <a href="page_07.html">제품 전체</a>
+          <a href="page_08.html">타월 가이드</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">SUPPORT</p>
+          <a href="page_12.html">FAQ</a>
+          <a href="page_13.html">1:1 문의</a>
+          <a href="page_14.html">주문 조회</a>
+          <a href="page_15.html">매장 안내</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Uncommon Towel. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">개인정보처리방침</a>
+          <a href="#">이용약관</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOP Button -->
+  <button class="top-btn" id="topBtn">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
+  <script>
+    lucide.createIcons();
+
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // TOP button
+    const topBtn = document.getElementById('topBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        topBtn.classList.add('show');
+      } else {
+        topBtn.classList.remove('show');
+      }
+    });
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
