@@ -1,0 +1,818 @@
+<!-- PAGE: 파트너십 (Partnership) -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>파트너십 | 언커먼타올 - 뱀부 100% 프리미엄 페이스타월</title>
+  <meta name="description" content="언커먼타올과 함께 성장할 유통·입점 파트너를 찾습니다. 뱀부 100% 프리미엄 타월로 고객에게 새로운 가치를 제안하세요.">
+  <meta name="keywords" content="프리미엄 수건, 뱀부 타월, 대나무 수건, 페이스타월, 항균 수건, 언커먼타올, uncommon towel, 혼수 수건, 선물 수건, 유통 파트너십, 입점 제안">
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --text-black: #1A1A1A;
+      --text-dark: #333333;
+      --text-gray: #666666;
+      --text-light: #999999;
+      --text-muted: #BCBCBC;
+      --bg-white: #FFFFFF;
+      --bg-light: #F5F5F5;
+      --bg-dark: #2D2D2D;
+      --bg-black: #1A1A1A;
+      --border-light: #E0E0E0;
+      --border-default: #D0D0D0;
+      --placeholder-bg: #E0E0E0;
+      --placeholder-icon: #BCBCBC;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Pretendard', sans-serif;
+      color: var(--text-gray);
+      line-height: 1.6;
+      background: var(--bg-white);
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; font-family: inherit; background: none; }
+    input, textarea, select {
+      font-family: inherit;
+      font-size: 15px;
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      width: 100%;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--text-dark);
+    }
+    textarea { resize: vertical; min-height: 120px; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-black);
+      letter-spacing: 0.5px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+    .nav-item {
+      position: relative;
+    }
+    .nav-item > a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-dark);
+      display: block;
+      padding: 8px 0;
+    }
+    .nav-item.active > a {
+      color: var(--text-black);
+      font-weight: 600;
+    }
+    .nav-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      min-width: 180px;
+      padding: 8px 0;
+      display: none;
+      box-shadow: var(--shadow-md);
+    }
+    .nav-item:hover .nav-dropdown {
+      display: block;
+    }
+    .nav-dropdown a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: var(--text-gray);
+    }
+    .nav-dropdown a:hover {
+      background: var(--bg-light);
+      color: var(--text-black);
+    }
+    .nav-utils {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .nav-utils button {
+      color: var(--text-dark);
+    }
+    .nav-utils svg {
+      width: 22px;
+      height: 22px;
+    }
+    .mobile-toggle {
+      display: none;
+    }
+
+    /* Button */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-primary {
+      background: var(--text-black);
+      color: #FFFFFF;
+      border: 1px solid var(--text-black);
+    }
+    .btn-secondary {
+      background: var(--bg-white);
+      color: var(--text-black);
+      border: 1px solid var(--border-default);
+    }
+    .btn-download {
+      background: var(--bg-light);
+      color: var(--text-black);
+      border: 1px solid var(--border-default);
+      padding: 16px 24px;
+      font-size: 16px;
+    }
+
+    /* Section */
+    .section-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .section-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text-black);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-gray);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+    .text-center { text-align: center; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+
+    /* Image Placeholder */
+    .img-placeholder {
+      background: var(--placeholder-bg);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+    .img-placeholder svg {
+      color: var(--placeholder-icon);
+      width: 48px;
+      height: 48px;
+    }
+
+    /* Hero */
+    .hero-partnership {
+      padding: 120px 0 80px;
+      background: var(--bg-white);
+    }
+    .hero-partnership-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-partnership .section-title {
+      font-size: 42px;
+    }
+
+    /* Collaboration */
+    .collaboration-section {
+      padding: 80px 0;
+      background: var(--bg-light);
+    }
+    .collab-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .collab-card {
+      background: var(--bg-white);
+      padding: 32px;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+    }
+    .collab-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .collab-icon svg {
+      width: 24px;
+      height: 24px;
+      color: var(--text-dark);
+    }
+    .collab-card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 12px;
+    }
+    .collab-card-desc {
+      font-size: 15px;
+      color: var(--text-gray);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .collab-card-benefit {
+      font-size: 14px;
+      color: var(--text-light);
+      padding-top: 16px;
+      border-top: 1px solid var(--border-light);
+    }
+    .collab-card-benefit strong {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    /* Requirements */
+    .requirements-section {
+      padding: 80px 0;
+      background: var(--bg-white);
+    }
+    .requirements-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 48px;
+    }
+    .req-item {
+      padding: 28px;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+    }
+    .req-item-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .req-item-title svg {
+      width: 20px;
+      height: 20px;
+      color: var(--text-dark);
+    }
+    .req-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .req-list-item {
+      font-size: 15px;
+      color: var(--text-gray);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .req-list-item svg {
+      width: 18px;
+      height: 18px;
+      color: var(--text-dark);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Download */
+    .download-section {
+      padding: 80px 0;
+      background: var(--bg-dark);
+      text-align: center;
+    }
+    .download-section .section-title {
+      color: #FFFFFF;
+    }
+    .download-section .section-desc {
+      color: rgba(255,255,255,0.6);
+      margin: 0 auto 32px;
+    }
+    .download-section .btn-download {
+      background: #FFFFFF;
+      color: var(--text-black);
+      border-color: #FFFFFF;
+    }
+
+    /* Contact Form */
+    .contact-form-section {
+      padding: 80px 0;
+      background: var(--bg-white);
+    }
+    .contact-form-wrap {
+      max-width: 720px;
+      margin: 48px auto 0;
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-black);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .form-required {
+      color: #E63946;
+      margin-left: 4px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-submit {
+      margin-top: 32px;
+      text-align: center;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 60px 0 32px;
+      background: var(--bg-white);
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .footer-brand-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .footer-brand-desc {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+    .footer-col-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: var(--text-light);
+      padding: 4px 0;
+    }
+    .footer-col a:hover {
+      color: var(--text-dark);
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .footer-bottom-links {
+      display: flex;
+      gap: 16px;
+    }
+    .footer-bottom-links a {
+      color: var(--text-muted);
+    }
+    .footer-bottom-links a:hover {
+      color: var(--text-dark);
+    }
+
+    /* TOP Button */
+    .top-button {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      width: 48px;
+      height: 48px;
+      background: var(--text-black);
+      color: #FFFFFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+      z-index: 90;
+    }
+    .top-button.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    .top-button svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-toggle { display: block; }
+      .section-title { font-size: 28px; }
+      .hero-partnership { padding: 80px 0 60px; }
+      .hero-partnership-inner { grid-template-columns: 1fr; gap: 32px; }
+      .hero-partnership .section-title { font-size: 32px; }
+      .collab-grid { grid-template-columns: 1fr; }
+      .requirements-grid { grid-template-columns: 1fr; gap: 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="page_01.html" class="nav-logo">UNCOMMON TOWEL</a>
+        <nav class="nav-links">
+          <div class="nav-item">
+            <a href="page_02.html">브랜드</a>
+            <div class="nav-dropdown">
+              <a href="page_02.html">브랜드 철학</a>
+              <a href="page_03.html">브랜드 스토리</a>
+              <a href="page_04.html">브랜드 여정</a>
+              <a href="page_05.html">소재 이야기</a>
+              <a href="page_06.html">지속가능성</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="page_07.html">제품</a>
+          </div>
+          <div class="nav-item">
+            <a href="page_08.html">타월 가이드</a>
+          </div>
+          <div class="nav-item active">
+            <a href="page_09.html">B2B문의</a>
+            <div class="nav-dropdown">
+              <a href="page_09.html">대량구매</a>
+              <a href="page_10.html">파트너십</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="page_11.html">고객 후기</a>
+          </div>
+          <div class="nav-item">
+            <a href="page_12.html">고객센터</a>
+            <div class="nav-dropdown">
+              <a href="page_12.html">FAQ</a>
+              <a href="page_13.html">1:1 문의</a>
+              <a href="page_14.html">주문 조회</a>
+              <a href="page_15.html">매장 안내</a>
+            </div>
+          </div>
+        </nav>
+        <div class="nav-utils">
+          <button><i data-lucide="search"></i></button>
+          <button><i data-lucide="user"></i></button>
+          <button><i data-lucide="shopping-cart"></i></button>
+          <button class="mobile-toggle"><i data-lucide="menu"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Section 1: Hero -->
+    <section class="hero-partnership">
+      <div class="container">
+        <div class="hero-partnership-inner">
+          <div>
+            <p class="section-label">Partnership</p>
+            <h1 class="section-title">언커먼타올과 함께<br>성장할 파트너를 찾습니다</h1>
+            <p class="section-desc">뱀부 100% 프리미엄 타월로 고객에게 새로운 가치를 제안하세요. 유통·입점 파트너십을 통해 함께 성장하겠습니다.</p>
+          </div>
+          <div class="img-placeholder" style="aspect-ratio:4/3;">
+            <i data-lucide="image"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Collaboration -->
+    <section class="collaboration-section">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">Collaboration Models</p>
+          <h2 class="section-title">협업 방향</h2>
+          <p class="section-desc mx-auto">채널별 특성에 맞춘 협업 모델로 최적의 성과를 만들어갑니다</p>
+        </div>
+        <div class="collab-grid">
+          <div class="collab-card">
+            <div class="collab-icon">
+              <i data-lucide="store"></i>
+            </div>
+            <h3 class="collab-card-title">오프라인 리테일 입점</h3>
+            <p class="collab-card-desc">백화점, 라이프스타일 편집숍, 호텔 어메니티 등 프리미엄 채널에 최적화된 제품 라인업과 디스플레이 지원을 제공합니다.</p>
+            <p class="collab-card-benefit"><strong>기대 효과:</strong> 브랜드 인지도 강화, 고객 체험 극대화</p>
+          </div>
+          <div class="collab-card">
+            <div class="collab-icon">
+              <i data-lucide="shopping-bag"></i>
+            </div>
+            <h3 class="collab-card-title">온라인 유통 파트너십</h3>
+            <p class="collab-card-desc">오픈마켓, 종합몰, 큐레이션 플랫폼 등 온라인 채널 입점을 통해 다양한 고객층에게 언커먼타올을 소개합니다.</p>
+            <p class="collab-card-benefit"><strong>기대 효과:</strong> 판매 확대, 데이터 기반 마케팅 협업</p>
+          </div>
+          <div class="collab-card">
+            <div class="collab-icon">
+              <i data-lucide="briefcase"></i>
+            </div>
+            <h3 class="collab-card-title">기업 제휴 협력</h3>
+            <p class="collab-card-desc">B2B 대량 공급, 기업 복지몰 입점, 호텔·리조트 어메니티 납품 등 기업 고객을 위한 맞춤형 솔루션을 제공합니다.</p>
+            <p class="collab-card-benefit"><strong>기대 효과:</strong> 안정적 물량 확보, 장기 파트너십</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Requirements -->
+    <section class="requirements-section">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">Requirements</p>
+          <h2 class="section-title">입점 조건</h2>
+          <p class="section-desc mx-auto">원활한 협업을 위한 기본 조건과 지원 사항을 안내합니다</p>
+        </div>
+        <div class="requirements-grid">
+          <div class="req-item">
+            <h3 class="req-item-title">
+              <i data-lucide="box"></i>
+              최소 물량 및 조건
+            </h3>
+            <div class="req-list">
+              <div class="req-list-item">
+                <i data-lucide="check"></i>
+                <span>최소 주문 물량: 채널별 상이 (상담 시 안내)</span>
+              </div>
+              <div class="req-list-item">
+                <i data-lucide="check"></i>
+                <span>결제 조건: 월말 결제 또는 협의</span>
+              </div>
+              <div class="req-list-item">
+                <i data-lucide="check"></i>
+                <span>배송: 전국 택배 또는 물류센터 직배송</span>
+              </div>
+            </div>
+          </div>
+          <div class="req-item">
+            <h3 class="req-item-title">
+              <i data-lucide="percent"></i>
+              마진 구조
+            </h3>
+            <div class="req-list">
+              <div class="req-list-item">
+                <i data-lucide="check"></i>
+                <span>채널 특성에 맞춘 합리적 공급가 책정</span>
+              </div>
+              <div class="req-list-item">
+                <i data-lucide="check"></i>
+                <span>물량 규모에 따른 단가 우대</span>
+              </div>
+              <div class="req-list-item">
+                <i data-lucide="check"></i>
+                <span>프로모션 시 마진 보전 지원</span>
+              </div>
+            </div>
+          </div>
+          <div class="req-item">
+            <h3 class="req-item-title">
+              <i data-lucide="gift"></i>
+              브랜드 지원 사항
+            </h3>
+            <div class="req-list">
+              <div class="req-list-item">
+                <i data-lucide="check"></i>
+                <span>제품 이미지, 상세페이지 소스 제공</span>
+              </div>
+              <div class="req-list-item">
+                <i data-lucide="check"></i>
+                <span>POP, 디스플레이 자료 지원 (오프라인)</span>
+              </div>
+              <div class="req-list-item">
+                <i data-lucide="check"></i>
+                <span>공동 마케팅 및 프로모션 협의</span>
+              </div>
+            </div>
+          </div>
+          <div class="req-item">
+            <h3 class="req-item-title">
+              <i data-lucide="award"></i>
+              품질 보증
+            </h3>
+            <div class="req-list">
+              <div class="req-list-item">
+                <i data-lucide="check"></i>
+                <span>KC 인증 1등급, 항균 인증 95%</span>
+              </div>
+              <div class="req-list-item">
+                <i data-lucide="check"></i>
+                <span>불량률 0.1% 이하 품질 관리</span>
+              </div>
+              <div class="req-list-item">
+                <i data-lucide="check"></i>
+                <span>교환·반품 정책 명확화</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Download -->
+    <section class="download-section">
+      <div class="container">
+        <p class="section-label" style="color:rgba(255,255,255,0.5);">Download</p>
+        <h2 class="section-title">입점 제안서 다운로드</h2>
+        <p class="section-desc">언커먼타올 브랜드 소개, 제품 라인업, 협업 조건을 담은 제안서를 다운로드하세요</p>
+        <a href="#" class="btn btn-download">
+          <i data-lucide="download"></i>
+          제안서 다운로드 (PDF)
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 5: Contact Form -->
+    <section class="contact-form-section">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">Contact</p>
+          <h2 class="section-title">제휴 문의</h2>
+          <p class="section-desc mx-auto">아래 양식을 작성해주시면 영업일 기준 2일 이내에 담당자가 연락드립니다</p>
+        </div>
+        <div class="contact-form-wrap">
+          <form>
+            <div class="form-group">
+              <label class="form-label">회사명<span class="form-required">*</span></label>
+              <input type="text" placeholder="회사명을 입력하세요" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">담당자명<span class="form-required">*</span></label>
+                <input type="text" placeholder="이름" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">연락처<span class="form-required">*</span></label>
+                <input type="tel" placeholder="010-0000-0000" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">이메일<span class="form-required">*</span></label>
+              <input type="email" placeholder="email@example.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">채널 유형<span class="form-required">*</span></label>
+              <select required>
+                <option value="">선택하세요</option>
+                <option value="offline">오프라인 리테일</option>
+                <option value="online">온라인 유통</option>
+                <option value="b2b">기업 제휴</option>
+                <option value="etc">기타</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">예상 물량</label>
+              <input type="text" placeholder="월 예상 수량 또는 협의">
+            </div>
+            <div class="form-group">
+              <label class="form-label">문의 내용<span class="form-required">*</span></label>
+              <textarea placeholder="협업 제안 내용, 채널 특성, 요청 사항 등을 자유롭게 작성해주세요" required></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary">제휴 문의 보내기</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand-name">UNCOMMON TOWEL</p>
+          <p class="footer-brand-desc">뱀부 100% 프리미엄 페이스타월</p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">BRAND</p>
+          <a href="page_02.html">브랜드 철학</a>
+          <a href="page_03.html">브랜드 스토리</a>
+          <a href="page_05.html">소재 이야기</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">SHOP</p>
+          <a href="page_07.html">제품 전체</a>
+          <a href="page_08.html">타월 가이드</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">SUPPORT</p>
+          <a href="page_12.html">FAQ</a>
+          <a href="page_13.html">1:1 문의</a>
+          <a href="page_14.html">주문 조회</a>
+          <a href="page_15.html">매장 안내</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Uncommon Towel. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">개인정보처리방침</a>
+          <a href="#">이용약관</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOP Button -->
+  <button class="top-button" id="topBtn">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
+  <script>
+    lucide.createIcons();
+
+    // TOP Button
+    const topBtn = document.getElementById('topBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        topBtn.classList.add('visible');
+      } else {
+        topBtn.classList.remove('visible');
+      }
+    });
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
