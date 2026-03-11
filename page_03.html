@@ -1,0 +1,602 @@
+<!-- PAGE: 브랜드 스토리 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>브랜드 스토리 | 언커먼타올 - 4년간 50번의 시제품, 216g의 정답</title>
+  <meta name="description" content="시계 납품 회사에서 프리미엄 수건 브랜드로. 4년간 5g 단위 테스트, 뱀부 100% 습식 직조, 루이비통을 연구한 패키징까지. 언커먼타올이 만들어진 이야기.">
+  <meta name="keywords" content="언커먼타올 스토리, 프리미엄 수건 개발, 뱀부 수건 탄생 배경, 프리미엄 수건, 뱀부 타월, uncommon towel">
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --text-black: #1A1A1A;
+      --text-dark: #333333;
+      --text-gray: #666666;
+      --text-light: #999999;
+      --text-muted: #BCBCBC;
+      --bg-white: #FFFFFF;
+      --bg-light: #F5F5F5;
+      --bg-dark: #2D2D2D;
+      --border-light: #E0E0E0;
+      --border-default: #D0D0D0;
+      --placeholder-bg: #E0E0E0;
+      --placeholder-icon: #BCBCBC;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+      --accent: #7FB5A5;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Pretendard', sans-serif;
+      color: var(--text-gray);
+      line-height: 1.6;
+      background: var(--bg-white);
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; font-family: inherit; background: none; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 헤더 */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-black);
+      letter-spacing: 0.5px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+    .nav-item {
+      position: relative;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+    .nav-item.active { color: var(--text-black); font-weight: 600; }
+    .nav-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 8px 0;
+      margin-top: 12px;
+      min-width: 180px;
+      box-shadow: var(--shadow-md);
+    }
+    .nav-item:hover .nav-dropdown { display: block; }
+    .nav-dropdown a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: var(--text-gray);
+      white-space: nowrap;
+    }
+    .nav-dropdown a:hover { background: var(--bg-light); color: var(--text-black); }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .nav-actions svg { width: 20px; height: 20px; color: var(--text-dark); cursor: pointer; }
+    .hamburger { display: none; flex-direction: column; gap: 4px; cursor: pointer; }
+    .hamburger span { width: 20px; height: 2px; background: var(--text-dark); transition: 0.3s; }
+
+    /* 버튼 */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-primary {
+      background: var(--text-black);
+      color: #FFFFFF;
+      border: 1px solid var(--text-black);
+    }
+    .btn-secondary {
+      background: var(--bg-white);
+      color: var(--text-black);
+      border: 1px solid var(--border-default);
+    }
+
+    /* 이미지 플레이스홀더 */
+    .img-placeholder {
+      background: var(--placeholder-bg);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+    .img-placeholder svg {
+      color: var(--placeholder-icon);
+      width: 48px;
+      height: 48px;
+    }
+
+    /* 공통 텍스트 */
+    .section-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-light);
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text-black);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-gray);
+      line-height: 1.8;
+      max-width: 560px;
+    }
+    .text-center { text-align: center; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+
+    /* 페이지 헤더 */
+    .page-header {
+      padding: 80px 0 60px;
+      background: var(--bg-white);
+      text-align: center;
+    }
+    .page-header .section-label { display: inline-block; }
+    .page-header .section-title { font-size: 42px; max-width: 800px; margin: 0 auto; }
+
+    /* 스토리 섹션 공통 */
+    .story-section {
+      padding: 80px 0;
+    }
+    .story-section:nth-child(even) {
+      background: var(--bg-light);
+    }
+    .story-content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .story-heading {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-black);
+      line-height: 1.4;
+      margin-bottom: 32px;
+    }
+    .story-text {
+      font-size: 16px;
+      color: var(--text-gray);
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+    .story-text:last-of-type {
+      margin-bottom: 0;
+    }
+    .story-image {
+      margin-top: 48px;
+    }
+
+    /* 좌우 분할 섹션 */
+    .split-section {
+      padding: 80px 0;
+    }
+    .split-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    /* 디테일 리스트 */
+    .detail-list {
+      margin-top: 32px;
+    }
+    .detail-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .detail-item:last-child { border-bottom: none; }
+    .detail-bullet {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--text-light);
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+    .detail-text {
+      font-size: 15px;
+      color: var(--text-gray);
+      line-height: 1.7;
+    }
+    .detail-text strong {
+      color: var(--text-black);
+      font-weight: 600;
+    }
+
+    /* 이미지 그리드 */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    /* CTA 섹션 */
+    .cta-section {
+      padding: 80px 0;
+      text-align: center;
+      background: var(--bg-white);
+    }
+    .cta-section .section-title { max-width: 500px; margin: 0 auto 24px; }
+
+    /* 인라인 링크 */
+    .inline-link {
+      color: var(--text-black);
+      text-decoration: underline;
+      font-weight: 500;
+    }
+    .inline-link:hover {
+      opacity: 0.7;
+    }
+
+    /* 푸터 */
+    .footer-light {
+      padding: 60px 0 32px;
+      background: var(--bg-white);
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .footer-brand-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .footer-brand-desc {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+    .footer-col-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: var(--text-light);
+      padding: 4px 0;
+    }
+    .footer-col a:hover {
+      color: var(--text-black);
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 24px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* TOP 버튼 */
+    .top-button {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+      z-index: 90;
+    }
+    .top-button.visible { display: flex; }
+    .top-button svg { width: 20px; height: 20px; color: white; }
+
+    /* 반응형 */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .page-header { padding: 60px 0 40px; }
+      .page-header .section-title { font-size: 28px; }
+      .story-section { padding: 60px 0; }
+      .story-heading { font-size: 22px; }
+      .story-text { font-size: 15px; }
+      .split-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .image-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="page_01.html" class="nav-logo">UNCOMMON TOWEL</a>
+        <nav class="nav-links">
+          <div class="nav-item active">
+            <a href="page_02.html">브랜드</a>
+            <div class="nav-dropdown">
+              <a href="page_02.html">브랜드 철학</a>
+              <a href="page_03.html">브랜드 스토리</a>
+              <a href="page_04.html">브랜드 여정</a>
+              <a href="page_05.html">소재 이야기</a>
+              <a href="page_06.html">지속가능성</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="page_07.html">제품</a>
+          </div>
+          <div class="nav-item">
+            <a href="page_08.html">타월 가이드</a>
+          </div>
+          <div class="nav-item">
+            <a href="page_09.html">B2B문의</a>
+            <div class="nav-dropdown">
+              <a href="page_09.html">대량구매</a>
+              <a href="page_10.html">파트너십</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="page_11.html">고객 후기</a>
+          </div>
+          <div class="nav-item">
+            <a href="page_12.html">고객센터</a>
+            <div class="nav-dropdown">
+              <a href="page_12.html">FAQ</a>
+              <a href="page_13.html">1:1 문의</a>
+              <a href="page_14.html">주문 조회</a>
+              <a href="page_15.html">매장 안내</a>
+            </div>
+          </div>
+        </nav>
+        <div class="nav-actions">
+          <i data-lucide="search"></i>
+          <i data-lucide="user"></i>
+          <i data-lucide="shopping-cart"></i>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 페이지 헤더 -->
+    <section class="page-header">
+      <div class="container">
+        <p class="section-label">BRAND STORY</p>
+        <h1 class="section-title">21살에 시계를 납품했고,<br>35살에 수건 하나를 완성했어요</h1>
+      </div>
+    </section>
+
+    <!-- 섹션 1: 시계를 팔던 회사가 수건을 만들기까지 -->
+    <section class="story-section">
+      <div class="container">
+        <div class="story-content">
+          <p class="story-text">
+            아버지 세대부터 시작된 사업이었어요. 공공기관과 은행에 시계와 기념품을 납품하던 회사. 열네 살 차이로 회사에 합류해 14년을 보냈어요. 매출 80억을 넘기던 시절도, 회생 절차를 밟아야 했던 시절도 있었어요.
+          </p>
+          <p class="story-text">
+            돌아보니 한 가지가 빠져 있었어요. '이건 진짜 좋은 물건이다'라고 자신 있게 말할 수 있는 제품. 납품하기 위해 만든 게 아니라, 내가 쓰고 싶어서 만든 물건. 2021년 여름, 그 질문에서 시작했어요.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 섹션 2: 아내의 기준을 통과하는 데 4년이 걸렸어요 -->
+    <section class="story-section">
+      <div class="container">
+        <div class="story-content">
+          <h2 class="story-heading">아내의 기준을 통과하는 데 4년이 걸렸어요</h2>
+          <p class="story-text">
+            처음엔 대나무 섬유에 면을 섞어봤어요. 부드럽긴 한데, 빨면 뻣뻣해졌어요. 그래서 <a href="page_05.html" class="inline-link">뱀부 100%</a>로 방향을 틀었어요. 그다음은 무게와의 싸움이었어요.
+          </p>
+          <p class="story-text">
+            280g부터 시작해서 5g씩 내려왔어요. 250g은 너무 묵직했고, 200g은 허전했어요. 216g에서 처음으로 아내가 '이거다'라고 했어요. 그 한마디를 듣기까지 50번 넘게 시제품을 만들었어요.
+          </p>
+          <p class="story-text">
+            색도 마찬가지였어요. 선염(색상 혼합) 방식은 예쁘지만 빨수록 품질이 떨어져요. 그래서 단색만 고집했어요. 진한 색은 염색 횟수가 많아져 섬유가 거칠어지니까 극단적으로 연한 색만 남겼어요. 민트색 하나를 맞추는 데만 수십 번 수정했어요.
+          </p>
+          <div class="story-image img-placeholder" style="aspect-ratio:16/9;">
+            <i data-lucide="image"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 섹션 3: 대청마루에서 몰디브까지 -->
+    <section class="story-section">
+      <div class="container">
+        <div class="story-content">
+          <h2 class="story-heading">대나무 빗살 사이로 비치는 빛,<br>그 이미지에서 시작했어요</h2>
+          <p class="story-text">
+            대나무는 청결하고 시원해요. 한옥 대청마루에 앉아 있는 느낌. 그 질감을 수건에 담고 싶었어요. 빗살무늬 직조 패턴은 그렇게 만들어졌고, 디자인 등록까지 했어요.
+          </p>
+          <p class="story-text">
+            색은 몰디브에서 왔어요. 바다, 하늘, 모래, 산호초. 일상 속에서 매일 아침 그 색감을 만지는 경험을 주고 싶었거든요. 그래서 12가지 컬러 각각에 이름과 의미를 붙였어요.
+          </p>
+          <div class="image-grid">
+            <div class="img-placeholder" style="aspect-ratio:4/3;">
+              <i data-lucide="image"></i>
+            </div>
+            <div class="img-placeholder" style="aspect-ratio:4/3;">
+              <i data-lucide="image"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 섹션 4: 받는 순간의 경험까지 설계하다 -->
+    <section class="split-section">
+      <div class="container">
+        <div class="split-inner">
+          <div>
+            <h2 class="story-heading">5만 원짜리로 보이는 데는<br>이유가 있어요</h2>
+            <p class="story-text">
+              루이비통 패키지를 연구했어요. 열었을 때의 기분, 손에 닿는 박스의 두께감, 안에 들어있는 것의 비율까지. 수건을 만드는 사람이 왜 포장에 이렇게 집착하냐고 묻는 분도 있었어요.
+            </p>
+            <p class="story-text">
+              시장가 4,000원짜리 박스를 공장가 1,600원에 맞추는 과정이 쉽지는 않았어요. 그래도 이 박스를 처음 열었을 때 '아, 이건 좀 다르다'라는 첫인상. 그걸 포기할 수 없었어요.
+            </p>
+            <div class="detail-list">
+              <div class="detail-item">
+                <div class="detail-bullet"></div>
+                <p class="detail-text"><strong>민트스톤 시그니처 박스</strong> — 일반 업체에서 제작 불가능한 두께감</p>
+              </div>
+              <div class="detail-item">
+                <div class="detail-bullet"></div>
+                <p class="detail-text"><strong>수작업 라벨 부착</strong> (라벨 수봉제)</p>
+              </div>
+              <div class="detail-item">
+                <div class="detail-bullet"></div>
+                <p class="detail-text"><strong>은방울꽃 리플렛</strong> (꽃말: 다시 찾은 행복)</p>
+              </div>
+              <div class="detail-item">
+                <div class="detail-bullet"></div>
+                <p class="detail-text"><strong>비율까지 계산된 배치</strong></p>
+              </div>
+            </div>
+          </div>
+          <div class="img-placeholder" style="aspect-ratio:4/5;">
+            <i data-lucide="image"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="section-title">이 모든 이야기가 담긴<br>제품을 만나보세요</h2>
+        <a href="page_07.html" class="btn btn-primary">제품 컬렉션 보러가기</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 푸터 -->
+  <footer class="footer-light">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand-name">UNCOMMON TOWEL</p>
+          <p class="footer-brand-desc">뱀부 100% 프리미엄 페이스타월</p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">BRAND</p>
+          <a href="page_02.html">브랜드 철학</a>
+          <a href="page_03.html">브랜드 스토리</a>
+          <a href="page_05.html">소재 이야기</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">SHOP</p>
+          <a href="page_07.html">제품 전체</a>
+          <a href="page_08.html">타월 가이드</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">SUPPORT</p>
+          <a href="page_12.html">FAQ</a>
+          <a href="page_13.html">1:1 문의</a>
+          <a href="page_14.html">주문 조회</a>
+          <a href="page_15.html">매장 안내</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Uncommon Towel. All rights reserved.</span>
+        <span>개인정보처리방침 | 이용약관</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOP 버튼 -->
+  <div class="top-button" id="topButton">
+    <i data-lucide="arrow-up"></i>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    // TOP 버튼
+    const topButton = document.getElementById('topButton');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        topButton.classList.add('visible');
+      } else {
+        topButton.classList.remove('visible');
+      }
+    });
+    topButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
